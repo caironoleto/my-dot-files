@@ -14,7 +14,7 @@ else
   fi
 fi
 
-export PS1=' [`pwd`$(__git_ps1 " \[${COLOR_RED}\](%s)\[${COLOR_NC}\]")]\n$ '
+PS1='\n[\u] \[\033[1;33m\]\w\a\[\033[0m\]$(__git_ps1 " \[\033[1;32m\](%s)\[\033[0m\]")\n\$ '
 
 function __pair_status {
   hitchstatus " %s";
@@ -31,3 +31,5 @@ shopt -s globstar
 
 complete -C ~/.rake-completion.rb -o default rake}
 if [ -f ~/.rvm/bin/rvm ] ; then source ~/.rvm/bin/rvm ; fi
+	
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
