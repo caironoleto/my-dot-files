@@ -27,7 +27,7 @@ bind "set show-all-if-ambiguous On" # this allows you to automatically show comp
 
 shopt -s checkwinsize
 shopt -s histappend
-shopt -s globstar
+# shopt -s globstar
 
 complete -C ~/.rake-completion.rb -o default rake}
 if [ -f ~/.rvm/bin/rvm ] ; then source ~/.rvm/bin/rvm ; fi

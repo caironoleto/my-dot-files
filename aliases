@@ -20,6 +20,7 @@ alias b='cd -'
 alias c='clear' # shortcut to clear your terminal
 
 alias sprof='source ~/.bash_profile'
+alias sinstall='ruby /Users/caironoleto/Sites/MyApps/dot-files/install.rb && sprof'
 
 # useful command to find what you should be aliasing:
 alias profileme="history | awk '{print \$2}' | awk 'BEGIN{FS=\"|\"}{print \$1}' | sort | uniq -c | sort -n | tail -n 20 | sort -nr"
