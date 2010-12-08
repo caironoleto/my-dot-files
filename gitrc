@@ -1,21 +1,26 @@
 source ~/.git-completion
 # Dr Nic Compatibility Mode
 
+alias gmf='git merge --no-ff'
 alias gst='git status'
-alias gl='git pull --rebase'
+alias gs='gst'
+alias gl='git pull'
 alias gp='git push'
 alias gpa='git push-all' # see [alias] in ~/.gitconfig
-alias gd='git diff | mate'
+alias gd='git diff'
 alias ga='git add'
 alias gcl='git config --list'
-alias gc='git commit -v'
-alias gca='git commit -v -a'
+alias gc='git commit -v -m'
+alias gca='git commit -v -a -m'
 alias gb='git branch'
 alias gbc='git branch --color'
 alias gba='git branch -a'
 alias gco='git checkout'
 alias gdc='git-svn dcommit'
 alias gk='gitk --all &'
+alias gt='git tag'
+alias gpt='git push --tags'
+alias gpwt="git push && git push --tags"
 
 alias gpatch='git diff master -p'
 # alias up='sake git:update' - need to priorities origin vs git-svn
@@ -23,7 +28,7 @@ function gpall() {
   git push rubyforge master --tags
   git push origin master --tags
 }
-alias gitrm="git stat | grep deleted | awk '{print $3}' | xargs git rm"
+alias grm="git status | grep deleted | awk '{print $4}' | xargs git rm"
 alias gitx="open -b nl.frim.GitX"
                                 
 # End Dr Nic Compatibility Mode

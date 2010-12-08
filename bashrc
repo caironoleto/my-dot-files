@@ -14,7 +14,12 @@ else
   fi
 fi
 
-PS1='\n[\u] \[\033[1;33m\]\w\a\[\033[0m\]$(__git_ps1 " \[\033[1;32m\](%s)\[\033[0m\]")\n\$ '
+# if ["$PS1"]; then
+# 	complete -cf sudo
+# fi
+
+PS1='\n[\t \u] \[\033[1;33m\]\w\a\[\033[0m\]$(__git_ps1 " \[\033[1;32m\](%s)\[\033[0m\]")'
+PS1="$PS1 \[\033[1;32m\](\$(~/.rvm/bin/rvm-prompt))\[\033[0m\] \n\$ "
 
 function __pair_status {
   hitchstatus " %s";
@@ -29,7 +34,13 @@ shopt -s checkwinsize
 shopt -s histappend
 # shopt -s globstar
 
-complete -C ~/.rake-completion.rb -o default rake}
-if [ -f ~/.rvm/bin/rvm ] ; then source ~/.rvm/bin/rvm ; fi
+complete -C ~/.rake-completion.rb -o default rake
+# if [ -f ~/.rvm/bin/rvm ] ; then source ~/.rvm/bin/rvm ; fi
+source ~/.rvm/scripts/rvm
 	
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+export JAVA_HOME=/Library/Java/Home
+export NUTCH_JAVA_HOME=/Library/Java/Home
+export CATALINA_HOME=/Library/Tomcat/Home
+export JAVA_OPTS="$JAVA_OPTS -Dsolr.solr.home=/Library/Tomcat/Home/solr"
+
+export PATH=/Users/caironoleto/.rvm/bin:/Library/Java/Home:/opt/local/bin:/opt/local/sbin:/Users/caironoleto/Sites/Codes/homebrew/bin:$PATH

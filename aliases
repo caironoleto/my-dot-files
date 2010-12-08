@@ -1,4 +1,4 @@
-alias gem='sudo gem' # sick of always forgetting sudo
+# alias gem='sudo gem' # sick of always forgetting sudo
 alias ls='ls -FG'
 alias ll='ls -lah'
 alias ..='cd ..;' # can then do .. .. .. to move up multiple directories.
@@ -15,7 +15,6 @@ alias home='cd ~' # the tilda is too hard to reach
 alias systail='tail -f -n0 /var/log/system.log'
 alias aptail='tail -f -n0 /var/log/apache*/*log'
 alias l='ls'
-alias b='cd -'
 
 alias c='clear' # shortcut to clear your terminal
 
@@ -27,25 +26,75 @@ alias profileme="history | awk '{print \$2}' | awk 'BEGIN{FS=\"|\"}{print \$1}' 
 
 # rails stuff
 alias log='tail -f -0 ./log/*.log'
-alias ss='ruby ./script/server'
+alias asp='autospec'
+alias ss='script/server'
 alias sc='ruby ./script/console'
+alias dot='mvim /Users/caironoleto/Sites/MyApps/dot-files/'
 alias cdm='cap deploy deploy:migrate'
+alias cpd='cap production deploy'
+alias cpds='cap production deploy:setup'
+alias csd='cap staging deploy'
+alias csds='cap staging deploy:setup'
 alias model='script/generate model'
+alias mailer='script/generate mailer'
 alias controller='script/generate controller'
 alias migration='script/generate migration'
-alias migrate='rake db:migrate'
+alias migrate='rake db:migrate && rake db:test:prepare'
+alias tmigrate='rake db:test:prepare'
 alias rollback='rake db:rollback'
-alias r='rake'
 alias webshare='python -c "import SimpleHTTPServer;SimpleHTTPServer.test()"'
+alias sconf='mate ~/.ssh/config'
+alias r='rails'
+alias b='bundle'
+alias bx='b exec'
+
+alias music='mpg123 -z -C -@ ~/List.lst'
+alias couchlog='tail -f /usr/local/var/log/couchdb/couch.log'
+alias cassandraconf='mate /opt/cassandra/conf/storage-conf.xml'
+alias mongolog='tail -f /Users/caironoleto/Sites/Codes/homebrew/Cellar/mongodb/1.2.3-x86_64/mongodb.log'
+alias tomcat='sh /Library/Tomcat/Home/bin/startup.sh'
+alias sshconfig='mate ~/.ssh/config'
 
 alias pubkey='cat ~/.ssh/*.pub'
+alias mhosts='mate ~/.ssh/config'
+alias smongo='mongod -f /Users/caironoleto/Sites/Codes/homebrew/Cellar/mongodb/1.2.3-x86_64/mongod.conf --fork --logpath //Users/caironoleto/Sites/Codes/homebrew/Cellar/mongodb/1.2.3-x86_64/mongodb.log'
+alias scassandra='/opt/cassandra/bin/cassandra -f'
+alias sredis='redis-server /Users/caironoleto/Sites/Codes/homebrew/etc/redis.conf'
 
 # replacement netstat cmd to find ports used by apps on OS X
 alias netstat="sudo lsof -i -P"
 
 alias colorslist="set | egrep 'COLOR_\w*'"  # lists all the colors
 
+function gemset() {
+  if [ $1 ]; then
+    rvm gemset $*
+  else
+    echo "Now in use: `rvm gemset name`"
+  fi
+}
+
 function f() { find * -name $1; }
+
+function p() {
+	if [ -d "/Users/caironoleto/Sites/Jus/$1" ]; then
+		cd "/Users/caironoleto/Sites/Jus/$1"
+	else
+		if [ -d "/Users/caironoleto/Sites/Freelas/$1" ]; then
+			cd "/Users/caironoleto/Sites/Freelas/$1"
+		else
+			if [ -d "/Users/caironoleto/Sites/MyApps/$1" ]; then
+				cd "/Users/caironoleto/Sites/MyApps/$1"
+			else
+				if [ -d "/Users/caironoleto/Sites/Codes/$1" ]; then
+					cd "/Users/caironoleto/Sites/Codes/$1"
+				else
+					echo "Project not found"
+				fi
+			fi
+		fi
+	fi
+}
 
 function extract() {
     if [ -f $1 ] ; then
@@ -67,6 +116,8 @@ function extract() {
         echo "'$1' is not a valid file"
     fi
 }
+
+alias v="mvim ."
 
 if [ $system_name == 'Darwin' ]; then
   function manpdf() { man -t $@ | open -f -a Preview; }

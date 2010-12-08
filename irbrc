@@ -2,9 +2,9 @@ require 'pp'
 require 'rubygems'
 
 begin
-  require 'wirble'
-  Wirble.init(:history_size => 10000)
-  Wirble.colorize
+  # require 'wirble'
+  # Wirble.init(:history_size => 10000)
+  # Wirble.colorize
 
 
   # Wirble::Colorize.colors = {
@@ -45,8 +45,8 @@ rescue LoadError
 end
 
 begin
-  require 'hirb'
-  Hirb.enable
+  # require 'hirb'
+  # Hirb.enable
 rescue LoadError
   puts "please run: `sudo gem install cldwalker-hirb --source http://gems.github.com`"
 end

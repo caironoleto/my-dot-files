@@ -1,1 +1,2 @@
---type-add ruby=haml,sass,builder,rake
+--type-add
+ruby=haml,sass,builder,rake
