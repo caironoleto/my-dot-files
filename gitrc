@@ -10,7 +10,7 @@ alias gpa='git push-all' # see [alias] in ~/.gitconfig
 alias gd='git diff'
 alias ga='git add'
 alias gcl='git config --list'
-alias gc='git commit -v -m'
+#alias gc='git commit -v -m'
 alias gca='git commit -v -a -m'
 alias gb='git branch'
 alias gbc='git branch --color'
@@ -30,7 +30,14 @@ function gpall() {
 }
 alias grm="git status | grep deleted | awk '{print $4}' | xargs git rm"
 alias gitx="open -b nl.frim.GitX"
+
+function gic() {
+  git commit -v -m "$*"
+}
                                 
+function gica() {
+  git commit -v -a -m "$*"
+}
 # End Dr Nic Compatibility Mode
                             
 # Bo's preferred aliases

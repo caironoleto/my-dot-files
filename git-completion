@@ -1319,7 +1319,7 @@ _git ()
 	diff)        _git_diff ;;
 	fetch)       _git_fetch ;;
 	format-patch) _git_format_patch ;;
-	gc)          _git_gc ;;
+	#gc)          _git_gc ;;
 	log)         _git_log ;;
 	ls-remote)   _git_ls_remote ;;
 	ls-tree)     _git_ls_tree ;;

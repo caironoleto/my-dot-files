@@ -19,7 +19,7 @@ alias l='ls'
 alias c='clear' # shortcut to clear your terminal
 
 alias sprof='source ~/.bash_profile'
-alias sinstall='ruby /Users/caironoleto/Sites/MyApps/dot-files/install.rb && sprof'
+alias sinstall='ruby ~/Sites/dot-files/install.rb && sprof'
 
 # useful command to find what you should be aliasing:
 alias profileme="history | awk '{print \$2}' | awk 'BEGIN{FS=\"|\"}{print \$1}' | sort | uniq -c | sort -n | tail -n 20 | sort -nr"
@@ -29,7 +29,7 @@ alias log='tail -f -0 ./log/*.log'
 alias asp='autospec'
 alias ss='script/server'
 alias sc='ruby ./script/console'
-alias dot='mvim /Users/caironoleto/Sites/MyApps/dot-files/'
+alias dot='vim ~/Sites/MyApps/dot-files/'
 alias cdm='cap deploy deploy:migrate'
 alias cpd='cap production deploy'
 alias cpds='cap production deploy:setup'
@@ -51,15 +51,15 @@ alias bx='b exec'
 alias music='mpg123 -z -C -@ ~/List.lst'
 alias couchlog='tail -f /usr/local/var/log/couchdb/couch.log'
 alias cassandraconf='mate /opt/cassandra/conf/storage-conf.xml'
-alias mongolog='tail -f /Users/caironoleto/Sites/Codes/homebrew/Cellar/mongodb/1.2.3-x86_64/mongodb.log'
+alias mongolog='tail -f ~/Sites/Codes/homebrew/Cellar/mongodb/1.2.3-x86_64/mongodb.log'
 alias tomcat='sh /Library/Tomcat/Home/bin/startup.sh'
 alias sshconfig='mate ~/.ssh/config'
 
 alias pubkey='cat ~/.ssh/*.pub'
 alias mhosts='mate ~/.ssh/config'
-alias smongo='mongod -f /Users/caironoleto/Sites/Codes/homebrew/Cellar/mongodb/1.2.3-x86_64/mongod.conf --fork --logpath //Users/caironoleto/Sites/Codes/homebrew/Cellar/mongodb/1.2.3-x86_64/mongodb.log'
+alias smongo='mongod -f ~/Sites/Codes/homebrew/Cellar/mongodb/1.2.3-x86_64/mongod.conf --fork --logpath /~/Sites/Codes/homebrew/Cellar/mongodb/1.2.3-x86_64/mongodb.log'
 alias scassandra='/opt/cassandra/bin/cassandra -f'
-alias sredis='redis-server /Users/caironoleto/Sites/Codes/homebrew/etc/redis.conf'
+alias sredis='redis-server ~/Sites/Codes/homebrew/etc/redis.conf'
 
 # replacement netstat cmd to find ports used by apps on OS X
 alias netstat="sudo lsof -i -P"
@@ -77,23 +77,11 @@ function gemset() {
 function f() { find * -name $1; }
 
 function p() {
-	if [ -d "/Users/caironoleto/Sites/Jus/$1" ]; then
-		cd "/Users/caironoleto/Sites/Jus/$1"
-	else
-		if [ -d "/Users/caironoleto/Sites/Freelas/$1" ]; then
-			cd "/Users/caironoleto/Sites/Freelas/$1"
-		else
-			if [ -d "/Users/caironoleto/Sites/MyApps/$1" ]; then
-				cd "/Users/caironoleto/Sites/MyApps/$1"
-			else
-				if [ -d "/Users/caironoleto/Sites/Codes/$1" ]; then
-					cd "/Users/caironoleto/Sites/Codes/$1"
-				else
-					echo "Project not found"
-				fi
-			fi
-		fi
-	fi
+  if [ -d ~/Sites/jus/$1 ]; then
+    cd ~/Sites/jus/$1
+  else
+    echo "Project not found"
+  fi
 }
 
 function extract() {
@@ -116,8 +104,6 @@ function extract() {
         echo "'$1' is not a valid file"
     fi
 }
-
-alias v="mvim ."
 
 if [ $system_name == 'Darwin' ]; then
   function manpdf() { man -t $@ | open -f -a Preview; }

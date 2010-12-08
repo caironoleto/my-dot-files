@@ -3,6 +3,10 @@ if [ $system_name == 'Darwin' ]; then
   export PATH="/Library/PostgreSQL8/bin/:$PATH"
   export CDPATH='.:~:~/Projecs:~/Sites'
   export GEM_OPEN_EDITOR='mate'
+  export JAVA_HOME=/Library/Java/Home
+  export NUTCH_JAVA_HOME=/Library/Java/Home
+  export CATALINA_HOME=/Library/Tomcat/Home
+  export JAVA_OPTS="$JAVA_OPTS -Dsolr.solr.home=/Library/Tomcat/Home/solr"
 fi
 
 export PATH="/usr/local/mysql/bin/:$PATH"
