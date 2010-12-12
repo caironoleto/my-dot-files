@@ -77,14 +77,33 @@ function gemset() {
 function f() { find * -name $1; }
 
 function p() {
-  for f in `ls -1 ~/Sites/`; do
-    if [ -d ~/Sites/$f/$1 ]; then
-      cd ~/Sites/$f/$1
-      break
-    else
-      echo "Project not found in $f"
-    fi
-  done
+  case "$1" in
+    "--help")
+      echo "To use this function:"
+      echo "p project_name"
+      echo "p --help (show this!)"
+      echo "p --list (list all projects)"
+      ;;
+    "--list")
+      for f in `ls -1 ~/Sites/`; do
+        echo "Projects in $f:"
+        for fin in `ls -1l ~/Sites/$f | grep "^d" | awk '{print $9}'`; do
+          echo "  $fin"
+        done
+      done
+      ;;
+      *)
+        for f in `ls -1 ~/Sites/`; do
+          if [ -d ~/Sites/$f/$1 ]; then
+            echo "Project found in $f"
+            cd ~/Sites/$f/$1
+            break
+          else
+            echo "Project not found in $f"
+          fi
+        done
+      ;;
+  esac
 }
 
 function extract() {
