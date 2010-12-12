@@ -77,11 +77,14 @@ function gemset() {
 function f() { find * -name $1; }
 
 function p() {
-  if [ -d ~/Sites/jus/$1 ]; then
-    cd ~/Sites/jus/$1
-  else
-    echo "Project not found"
-  fi
+  for f in `ls -1 ~/Sites/`; do
+    if [ -d ~/Sites/$f/$1 ]; then
+      cd ~/Sites/$f/$1
+      break
+    else
+      echo "Project not found in $f"
+    fi
+  done
 }
 
 function extract() {
