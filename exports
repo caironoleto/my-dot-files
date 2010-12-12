@@ -2,7 +2,7 @@ if [ $system_name == 'Darwin' ]; then
   export PATH="/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/:$PATH"
   export PATH="/Library/PostgreSQL8/bin/:$PATH"
   export CDPATH='.:~:~/Projecs:~/Sites'
-  export GEM_OPEN_EDITOR='mate'
+  export GEM_OPEN_EDITOR='mvim'
   export JAVA_HOME=/Library/Java/Home
   export NUTCH_JAVA_HOME=/Library/Java/Home
   export CATALINA_HOME=/Library/Tomcat/Home
@@ -12,7 +12,7 @@ fi
 export PATH="/usr/local/mysql/bin/:$PATH"
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 export PATH="$PATH:/usr/local/jruby/bin"
-
+export PATH="~/.rvm/bin:/opt/local/bin:/opt/local/sbin:$PATH"
 
 export IRBRC="$HOME/.irbrc"
 export JEWELER_OPTS="--rspec --gemcutter --rubyforge --reek --roodi"
@@ -44,4 +44,3 @@ export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*} ${PWD}"; echo -n
 
 # export HISTCONTROL=erasedups # I actually want duplicates because of profileme
 export HISTSIZE=1000000
-
