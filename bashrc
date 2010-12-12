@@ -25,9 +25,7 @@ bind "set show-all-if-ambiguous On" # this allows you to automatically show comp
 shopt -s checkwinsize
 shopt -s histappend
 
-if [ $system_name == 'Darwin']; then
+if [ $system_name == 'Darwin' ]; then
   complete -C ~/.rake-completion.rb -o default rake
 fi
-
-export PATH=~/.rvm/bin:/opt/local/bin:/opt/local/sbin:$PATH
 source ~/.rvm/scripts/rvm
