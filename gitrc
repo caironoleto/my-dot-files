@@ -10,7 +10,7 @@ alias gpa='git push-all' # see [alias] in ~/.gitconfig
 alias gd='git diff'
 alias ga='git add'
 alias gcl='git config --list'
-#alias gc='git commit -v -m'
+alias gc='git commit'
 alias gca='git commit -v -a -m'
 alias gb='git branch'
 alias gbc='git branch --color'
@@ -30,6 +30,19 @@ function gpall() {
 }
 alias grm="git status | grep deleted | awk '{print $4}' | xargs git rm"
 alias gitx="open -b nl.frim.GitX"
+
+alias version="cat config/version"
+function tag() {
+  if [ $2 ]; then
+    git tag $1 $2
+  else
+    git tag $1
+  fi
+  echo "$1" > config/version
+  git add config/version
+  git commit -m "Alterado para a versão $1"
+  git push --tags
+}
 
 function gic() {
   git commit -v -m "$*"

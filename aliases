@@ -7,8 +7,14 @@ alias g='grep -i'  #case insensitive grep
 alias h='history|g'
 alias ducks='du -cks * | sort -rn|head -11' # Lists the size of all the folders
 alias top='top -o cpu'
-alias m='mate .'
-alias o='open .'
+if [ $system_name == 'Darwin' ]; then
+  alias m='mate .'
+  alias v='mvim .'
+  alias o='open .'
+else
+  alias v='vim .'
+fi
+
 alias et="m"
 
 alias home='cd ~' # the tilda is too hard to reach
@@ -47,6 +53,7 @@ alias sconf='mate ~/.ssh/config'
 alias r='rails'
 alias b='bundle'
 alias bx='b exec'
+alias deploy="git push origin master && cap production deploy:migrations"
 
 alias music='mpg123 -z -C -@ ~/List.lst'
 alias couchlog='tail -f /usr/local/var/log/couchdb/couch.log'

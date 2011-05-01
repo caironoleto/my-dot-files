@@ -1,6 +1,7 @@
 if [ $system_name == 'Darwin' ]; then
   export PATH="/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/:$PATH"
   export PATH="/Library/PostgreSQL8/bin/:$PATH"
+  export PATH="/opt/vim/bin:$PATH"
   export CDPATH='.:~:~/Projecs:~/Sites'
   export GEM_OPEN_EDITOR='mvim'
   export JAVA_HOME=/Library/Java/Home
@@ -13,6 +14,7 @@ export PATH="/usr/local/mysql/bin/:$PATH"
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 export PATH="$PATH:/usr/local/jruby/bin"
 export PATH="~/.rvm/bin:/opt/local/bin:/opt/local/sbin:$PATH"
+export PATH="~/bin:$PATH"
 
 export IRBRC="$HOME/.irbrc"
 export JEWELER_OPTS="--rspec --gemcutter --rubyforge --reek --roodi"
