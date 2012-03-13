@@ -29,3 +29,5 @@ if [ $system_name == 'Darwin' ]; then
   complete -C ~/.rake-completion.rb -o default rake
 fi
 source ~/.rvm/scripts/rvm
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

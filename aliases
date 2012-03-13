@@ -1,19 +1,19 @@
-# alias gem='sudo gem' # sick of always forgetting sudo
 alias ls='ls -FG'
 alias ll='ls -lah'
-alias ..='cd ..;' # can then do .. .. .. to move up multiple directories.
+alias ..='cd ..;' 
 alias ...='.. ..'
-alias g='grep -i'  #case insensitive grep
+alias g='grep -i' 
 alias h='history|g'
-alias ducks='du -cks * | sort -rn|head -11' # Lists the size of all the folders
+alias ducks='du -cks * | sort -rn|head -11'
 alias top='top -o cpu'
 if [ $system_name == 'Darwin' ]; then
   alias m='mate .'
-  alias v='mvim .'
+  alias v='mvim'
   alias o='open .'
 else
   alias v='vim .'
 fi
+alias reload="cd .. && cd -"
 
 alias et="m"
 
@@ -44,8 +44,8 @@ alias csds='cap staging deploy:setup'
 alias model='script/generate model'
 alias mailer='script/generate mailer'
 alias controller='script/generate controller'
-alias migration='script/generate migration'
-alias migrate='rake db:migrate && rake db:test:prepare'
+alias migration='rails g migration'
+alias migrate='rake db:migrate db:test:prepare'
 alias tmigrate='rake db:test:prepare'
 alias rollback='rake db:rollback'
 alias webshare='python -c "import SimpleHTTPServer;SimpleHTTPServer.test()"'
@@ -53,7 +53,14 @@ alias sconf='mate ~/.ssh/config'
 alias r='rails'
 alias b='bundle'
 alias bx='b exec'
-alias deploy="git push origin master && cap production deploy:migrations"
+alias deploy="git push heroku master && git push origin master"
+alias dfolha="fab -R staging deploy"
+alias itsel='bundle exec infinity_test --test-unit'
+alias itcap='CI=true itsel'
+alias gcap='CI=true guard'
+# alias run='rm -f tmp/capybara/* && clear && CI=true rspec'
+# alias run_units='run spec/business && run spec/models'
+alias uni="unicorn_rails"
 
 alias music='mpg123 -z -C -@ ~/List.lst'
 alias couchlog='tail -f /usr/local/var/log/couchdb/couch.log'
@@ -113,6 +120,19 @@ function p() {
   esac
 }
 
+function run() {
+  rm -f tmp/capybara/*
+  clear
+  case "$1" in
+    "units")  rspec spec/business && rspec spec/models
+              ;;
+    "requests") rspec spec/requests
+                ;;
+    *)  rspec $*
+        ;;
+  esac
+}
+
 function extract() {
     if [ -f $1 ] ; then
         case $1 in
@@ -152,7 +172,6 @@ if [ $system_name == 'Darwin' ]; then
   alias hidefile='/usr/bin/SetFile -a "V"'
   alias showfile='/usr/bin/SetFile -a "v"'
   alias startpg='sudo /Library/StartupItems/PostgreSQL/PostgreSQL start'
-  alias readrails="mate `ruby -rubygems -e "puts( ['rails', 'activerecord', 'activeresource', 'actionpack', 'activesupport'].collect { |gem| gems = Gem.source_index.find_name(gem); gems.last.full_gem_path; }.join(' '))"`"
 else
   alias ls='ls --color=auto'
 fi
