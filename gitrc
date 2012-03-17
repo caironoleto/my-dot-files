@@ -58,11 +58,9 @@ alias gac='gca'
 alias gps='gp'
 alias gpl='gl'
 alias gpo='gp origin master'
+alias gfp='git format-patch -1'
 alias gst='git apply --stat'
 alias gch='git apply --check'
 alias gam='git am --signoff <'
 
 alias ignore_empty='find . \( -type d -empty \) -and \( -not -regex ./\.git.* \) -exec touch {}/.gitignore \;'
-
-# export PATH=/usr/local/git/bin:$PATH
-# export MANPATH=/usr/local/git/man:$MANPATH
