@@ -6,13 +6,7 @@ alias g='grep -i'
 alias h='history|g'
 alias ducks='du -cks * | sort -rn|head -11'
 alias top='top -o cpu'
-if [ $system_name == 'Darwin' ]; then
-  alias m='mate .'
-  alias v='mvim'
-  alias o='open .'
-else
-  alias v='vim .'
-fi
+alias v='mvim'
 alias reload="cd .. && cd -"
 
 alias et="m"
@@ -24,7 +18,7 @@ alias l='ls'
 
 alias c='clear' # shortcut to clear your terminal
 
-alias sprof='source ~/.bash_profile'
+alias sprof='source ~/.zshrc'
 alias sinstall='ruby ~/Sites/dot-files/install.rb && sprof'
 
 # useful command to find what you should be aliasing:
@@ -61,6 +55,7 @@ alias gcap='CI=true guard'
 # alias run='rm -f tmp/capybara/* && clear && CI=true rspec'
 # alias run_units='run spec/business && run spec/models'
 alias uni="unicorn_rails"
+alias u="uni"
 
 alias music='mpg123 -z -C -@ ~/List.lst'
 alias couchlog='tail -f /usr/local/var/log/couchdb/couch.log'
@@ -121,10 +116,16 @@ function p() {
 }
 
 function run() {
-  rm -f tmp/capybara/*
+  noglob rm -f tmp/capybara/*
   clear
   case "$1" in
-    "units")  rspec spec/business && rspec spec/models
+    "units")  rspec spec/business && rspec spec/presenters && rspec spec/models && rspec spec/lib
+              ;;
+    "business")  rspec spec/business
+              ;;
+    "models")  rspec spec/models
+              ;;
+    "presenters")  rspec spec/presenters
               ;;
     "requests") rspec spec/requests
                 ;;
@@ -154,24 +155,21 @@ function extract() {
     fi
 }
 
-if [ $system_name == 'Darwin' ]; then
-  function manpdf() { man -t $@ | open -f -a Preview; }
-  function osinfo() { 
-     x1="$(/usr/bin/sw_vers -productName)"
-     x2="$(/usr/bin/sw_vers -productVersion)"
-     x3="$(/usr/bin/sw_vers -buildVersion)"
-     x4="$(/usr/bin/arch)"
-     echo "${x1} - ${x2} - ${x3} - ${x4}"
-  }
-  alias ls='ls -G'
-  alias pubkey='cat ~/.ssh/*.pub | pbcopy && echo "Keys copied to clipboard"'
-  alias m='mate .'
-  alias et="m"
-  alias o='open .'
-  alias eprof="mate ~/.dot-files"
-  alias hidefile='/usr/bin/SetFile -a "V"'
-  alias showfile='/usr/bin/SetFile -a "v"'
-  alias startpg='sudo /Library/StartupItems/PostgreSQL/PostgreSQL start'
-else
-  alias ls='ls --color=auto'
-fi
+function manpdf() { man -t $@ | open -f -a Preview; }
+function osinfo() { 
+   x1="$(/usr/bin/sw_vers -productName)"
+   x2="$(/usr/bin/sw_vers -productVersion)"
+   x3="$(/usr/bin/sw_vers -buildVersion)"
+   x4="$(/usr/bin/arch)"
+   echo "${x1} - ${x2} - ${x3} - ${x4}"
+}
+alias ls='ls -G'
+alias pubkey='cat ~/.ssh/*.pub | pbcopy && echo "Keys copied to clipboard"'
+alias m='mate .'
+alias et="m"
+alias o='open .'
+alias eprof="mate ~/.dot-files"
+alias hidefile='/usr/bin/SetFile -a "V"'
+alias showfile='/usr/bin/SetFile -a "v"'
+alias startpg='sudo /Library/StartupItems/PostgreSQL/PostgreSQL start'
+alias sync='rsync -v -r -u --progress /Users/caironoleto/Music/iTunes/iTunes\ Music/Books /Volumes/NO_NAME/sdcard/eBooks'

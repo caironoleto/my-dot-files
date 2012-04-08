@@ -1,6 +1,3 @@
-source ~/.git-completion
-# Dr Nic Compatibility Mode
-
 #alias gmf='git merge --no-ff'
 alias gs='git status'
 alias gl='git pull'
