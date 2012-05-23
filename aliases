@@ -26,6 +26,7 @@ alias profileme="history | awk '{print \$2}' | awk 'BEGIN{FS=\"|\"}{print \$1}' 
 
 # rails stuff
 alias log='tail -f -0 ./log/*.log'
+alias tailf="tail -f"
 alias asp='autospec'
 alias ss='script/server'
 alias sc='ruby ./script/console'
@@ -116,10 +117,10 @@ function p() {
 }
 
 function run() {
-  noglob rm -f tmp/capybara/*
+  rm -f tmp/capybara/*
   clear
   case "$1" in
-    "units")  rspec spec/business && rspec spec/presenters && rspec spec/models && rspec spec/lib
+    "units")  rspec spec/business && rspec spec/decorators && rspec spec/lib && rspec spec/importers && rspec spec/models
               ;;
     "business")  rspec spec/business
               ;;
@@ -172,4 +173,4 @@ alias eprof="mate ~/.dot-files"
 alias hidefile='/usr/bin/SetFile -a "V"'
 alias showfile='/usr/bin/SetFile -a "v"'
 alias startpg='sudo /Library/StartupItems/PostgreSQL/PostgreSQL start'
-alias sync='rsync -v -r -u --progress /Users/caironoleto/Music/iTunes/iTunes\ Music/Books /Volumes/NO_NAME/sdcard/eBooks'
+alias sync='rsync -v -r -u --progress /Users/caironoleto/Music/iTunes/iTunes\ Music/Books /Volumes/NO\ NAME'
