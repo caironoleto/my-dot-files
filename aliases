@@ -55,8 +55,9 @@ alias itcap='CI=true itsel'
 alias gcap='CI=true guard'
 # alias run='rm -f tmp/capybara/* && clear && CI=true rspec'
 # alias run_units='run spec/business && run spec/models'
-alias uni="unicorn_rails"
+alias uni="unicorn_rails -D"
 alias u="uni"
+alias ku="ps aux | grep unicorn_rails | awk '{print $2}' | xargs kill -9"
 
 alias music='mpg123 -z -C -@ ~/List.lst'
 alias couchlog='tail -f /usr/local/var/log/couchdb/couch.log'
