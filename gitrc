@@ -6,7 +6,7 @@ alias gpa='git push-all' # see [alias] in ~/.gitconfig
 alias gd='git diff'
 alias ga='git add'
 alias gcl='git config --list'
-alias gc='git commit'
+alias gc='git commit --verbose'
 alias gca='git commit -v -a -m'
 alias gb='git branch'
 alias gbc='git branch --color'
@@ -17,6 +17,7 @@ alias gk='gitk --all &'
 alias gt='git tag'
 alias gpt='git push --tags'
 alias gpwt="git push && git push --tags"
+alias lg="git lg"
 
 alias gpatch='git diff master -p'
 # alias up='sake git:update' - need to priorities origin vs git-svn
@@ -53,11 +54,14 @@ function gica() {
 alias gi='git init'
 alias gac='gca'
 alias gps='gp'
-alias gpl='gl'
+alias gpl='gl --rebase'
 alias gpo='gp origin master'
 alias gfp='git format-patch -1'
 alias gst='git apply --stat'
 alias gch='git apply --check'
 alias gam='git am --signoff <'
+alias grj='git apply --reject --whitespace=fix'
+alias grh="git reset HEAD"
 
 alias ignore_empty='find . \( -type d -empty \) -and \( -not -regex ./\.git.* \) -exec touch {}/.gitignore \;'
+alias gitrc="cat ~/.gitrc"

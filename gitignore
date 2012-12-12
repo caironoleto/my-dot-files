@@ -42,3 +42,6 @@ test-output
 Thumbs.db
 tmp*
 tmp/**/*
+.env
+*.ret
+*.dump

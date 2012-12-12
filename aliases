@@ -41,24 +41,24 @@ alias mailer='script/generate mailer'
 alias controller='script/generate controller'
 alias migration='rails g migration'
 alias migrate='rake db:migrate db:test:prepare'
-alias tmigrate='rake db:test:prepare'
+alias tmigrate='rake db:migrate && RAILS_ENV=test rake db:migrate > /dev/null'
+alias trollback='rake db:rollback && RAILS_ENV=test rake db:rollback > /dev/null'
 alias rollback='rake db:rollback'
 alias webshare='python -c "import SimpleHTTPServer;SimpleHTTPServer.test()"'
 alias sconf='mate ~/.ssh/config'
 alias r='rails'
 alias b='bundle'
 alias bx='b exec'
-alias deploy="git push heroku master && git push origin master"
 alias dfolha="fab -R staging deploy"
 alias itsel='bundle exec infinity_test --test-unit'
 alias itcap='CI=true itsel'
 alias gcap='CI=true guard'
 # alias run='rm -f tmp/capybara/* && clear && CI=true rspec'
 # alias run_units='run spec/business && run spec/models'
-alias uni="unicorn_rails -D"
+alias uni="rails s puma -p 8080 -d"
 alias u="uni"
-alias ku="ps aux | grep unicorn_rails | awk '{print $2}' | xargs kill -9"
-
+alias ku="ps aux | grep 'rails s' | grep 'grep' -v | cut -c13-23 | xargs kill -9"
+alias ru="ku && u"
 alias music='mpg123 -z -C -@ ~/List.lst'
 alias couchlog='tail -f /usr/local/var/log/couchdb/couch.log'
 alias cassandraconf='mate /opt/cassandra/conf/storage-conf.xml'
@@ -76,6 +76,13 @@ alias sredis='redis-server ~/Sites/Codes/homebrew/etc/redis.conf'
 alias netstat="sudo lsof -i -P"
 
 alias colorslist="set | egrep 'COLOR_\w*'"  # lists all the colors
+
+function deploy() {
+  if [ $1 ]; then
+    git push staging $1:master
+    heroku run rake db:migrate
+  fi
+}
 
 function gemset() {
   if [ $1 ]; then
@@ -121,9 +128,13 @@ function run() {
   rm -f tmp/capybara/*
   clear
   case "$1" in
-    "units")  rspec spec/business && rspec spec/decorators && rspec spec/lib && rspec spec/importers && rspec spec/models
+    "units")  rspec spec/business && rspec spec/decorators && rspec spec/lib && rspec spec/importers && rspec spec/typecasters && rspec spec/enumerations && rspec spec/parsers && rspec spec/models
               ;;
     "business")  rspec spec/business
+              ;;
+    "models")  rspec spec/models
+              ;;
+    "enumerations")  rspec spec/enumerations
               ;;
     "models")  rspec spec/models
               ;;
@@ -134,6 +145,11 @@ function run() {
     *)  rspec $*
         ;;
   esac
+}
+
+function fr() {
+  find $3 -type f -exec sed -i.bak "s#$1#$2#" {} \;
+  find . -name '*.bak' -delete
 }
 
 function extract() {
@@ -175,3 +191,6 @@ alias hidefile='/usr/bin/SetFile -a "V"'
 alias showfile='/usr/bin/SetFile -a "v"'
 alias startpg='sudo /Library/StartupItems/PostgreSQL/PostgreSQL start'
 alias sync='rsync -v -r -u --progress /Users/caironoleto/Music/iTunes/iTunes\ Music/Books /Volumes/NO\ NAME'
+alias mg='rails g migration'
+alias munico='p unico && RAILS_ENV=development rake db:migrate && cd -'
+alias pjs='phantomjs'
