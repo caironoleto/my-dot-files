@@ -18,6 +18,7 @@ alias gt='git tag'
 alias gpt='git push --tags'
 alias gpwt="git push && git push --tags"
 alias lg="git lg"
+alias cgs='c && gs'
 
 alias gpatch='git diff master -p'
 # alias up='sake git:update' - need to priorities origin vs git-svn

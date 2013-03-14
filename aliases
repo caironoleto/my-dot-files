@@ -40,10 +40,10 @@ alias model='script/generate model'
 alias mailer='script/generate mailer'
 alias controller='script/generate controller'
 alias migration='rails g migration'
-alias migrate='rake db:migrate db:test:prepare'
-alias tmigrate='rake db:migrate && RAILS_ENV=test rake db:migrate > /dev/null'
+alias tmigrate='rake db:migrate && echo "Migrating test env" && RAILS_ENV=test rake db:migrate > /dev/null && say Finish him'
+alias migrate='tmigrate'
 alias trollback='rake db:rollback && RAILS_ENV=test rake db:rollback > /dev/null'
-alias rollback='rake db:rollback'
+alias rollback='rake db:rollback && RAILS_ENV=test rake db:rollback > /dev/null'
 alias webshare='python -c "import SimpleHTTPServer;SimpleHTTPServer.test()"'
 alias sconf='mate ~/.ssh/config'
 alias r='rails'
@@ -78,17 +78,17 @@ alias netstat="sudo lsof -i -P"
 alias colorslist="set | egrep 'COLOR_\w*'"  # lists all the colors
 
 function deploy() {
-  if [ $1 ]; then
-    git push staging $1:master
-    heroku run rake db:migrate
-  fi
-}
+  echo "Current configuration is for `git config --get heroku.remote`"
+  echo -n 'Continue? [yn] '
+  read continue
 
-function gemset() {
-  if [ $1 ]; then
-    rvm gemset $*
-  else
-    echo "Now in use: `rvm gemset name`"
+  if [ $continue = 'y' ]; then
+    if [ $1 ]; then
+      git push `git config --get heroku.remote` $1:master
+      heroku run rake db:migrate
+    fi
+
+    say Deploy finished!
   fi
 }
 
@@ -145,6 +145,7 @@ function run() {
     *)  rspec $*
         ;;
   esac
+  say Specs Finished!
 }
 
 function fr() {
@@ -181,6 +182,30 @@ function osinfo() {
    x4="$(/usr/bin/arch)"
    echo "${x1} - ${x2} - ${x3} - ${x4}"
 }
+
+alias configuration_changed='say Configured changed!'
+
+function staging() {
+  echo '[heroku]' > ~/.nohup
+  echo '  remote=staging' >> ~/.nohup
+  echo 'Staging configurated'
+  configuration_changed
+}
+
+function production() {
+  echo '[heroku]' > ~/.nohup
+  echo '  remote=production' >> ~/.nohup
+  echo 'Production configurated'
+  configuration_changed
+}
+
+function training() {
+  echo '[heroku]' > ~/.nohup
+  echo '  remote=training' >> ~/.nohup
+  echo 'Training configurated'
+  configuration_changed
+}
+
 alias ls='ls -G'
 alias pubkey='cat ~/.ssh/*.pub | pbcopy && echo "Keys copied to clipboard"'
 alias m='mate .'
