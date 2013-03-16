@@ -126,7 +126,6 @@ function p() {
 }
 
 function run() {
-  rm -f tmp/capybara/*
   clear
   case "$1" in
     "units")  rspec spec/business && rspec spec/decorators && rspec spec/lib && rspec spec/importers && rspec spec/typecasters && rspec spec/enumerations && rspec spec/parsers && rspec spec/models
