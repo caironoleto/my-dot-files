@@ -1,8 +1,6 @@
-#alias gmf='git merge --no-ff'
 alias gs='git status'
 alias gl='git pull'
 alias gp='git push'
-alias gpa='git push-all' # see [alias] in ~/.gitconfig
 alias gd='git diff'
 alias ga='git add'
 alias gcl='git config --list'
@@ -12,57 +10,26 @@ alias gb='git branch'
 alias gbc='git branch --color'
 alias gba='git branch -a'
 alias gco='git checkout'
-alias gdc='git-svn dcommit'
-alias gk='gitk --all &'
 alias gt='git tag'
 alias gpt='git push --tags'
 alias gpwt="git push && git push --tags"
 alias lg="git lg"
 alias cgs='c && gs'
-
+alias gpo='git push origin `git rev-parse --abbrev-ref HEAD`'
 alias gpatch='git diff master -p'
-# alias up='sake git:update' - need to priorities origin vs git-svn
-function gpall() {
-  git push rubyforge master --tags
-  git push origin master --tags
-}
 alias grm="git rm -rf"
 alias gitx="open -b nl.frim.GitX"
-
 alias version="cat config/version"
-function tag() {
-  if [ $2 ]; then
-    git tag $1 $2
-  else
-    git tag $1
-  fi
-  echo "$1" > config/version
-  git add config/version
-  git commit -m "Alterado para a versão $1"
-  git push --tags
-}
-
-function gic() {
-  git commit -v -m "$*"
-}
-                                
-function gica() {
-  git commit -v -a -m "$*"
-}
-# End Dr Nic Compatibility Mode
-                            
-# Bo's preferred aliases
 alias gi='git init'
 alias gac='gca'
 alias gps='gp'
 alias gpl='gl --rebase'
-alias gpo='gp origin master'
 alias gfp='git format-patch -1'
 alias gst='git apply --stat'
 alias gch='git apply --check'
 alias gam='git am --signoff <'
 alias grj='git apply --reject --whitespace=fix'
 alias grh="git reset HEAD"
-
+alias greset='git reset HEAD\^ && grh .'
 alias ignore_empty='find . \( -type d -empty \) -and \( -not -regex ./\.git.* \) -exec touch {}/.gitignore \;'
 alias gitrc="cat ~/.gitrc"

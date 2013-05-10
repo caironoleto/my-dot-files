@@ -15,6 +15,7 @@ alias home='cd ~' # the tilda is too hard to reach
 alias systail='tail -f -n0 /var/log/system.log'
 alias aptail='tail -f -n0 /var/log/apache*/*log'
 alias l='ls'
+alias dbc='cat config/database.yml'
 
 alias c='clear' # shortcut to clear your terminal
 
@@ -40,10 +41,11 @@ alias model='script/generate model'
 alias mailer='script/generate mailer'
 alias controller='script/generate controller'
 alias migration='rails g migration'
-alias tmigrate='rake db:migrate && echo "Migrating test env" && RAILS_ENV=test rake db:migrate > /dev/null && say Finish him'
+alias tmigrate='rake db:migrate > /dev/null && echo "Migrating test env" && RAILS_ENV=test rake db:migrate > /dev/null && say Finish him'
+alias driver="ack 'page.driver.render' spec/requests"
 alias migrate='tmigrate'
 alias trollback='rake db:rollback && RAILS_ENV=test rake db:rollback > /dev/null'
-alias rollback='rake db:rollback && RAILS_ENV=test rake db:rollback > /dev/null'
+alias rollback='rake db:rollback > /dev/null && RAILS_ENV=test rake db:rollback > /dev/null'
 alias webshare='python -c "import SimpleHTTPServer;SimpleHTTPServer.test()"'
 alias sconf='mate ~/.ssh/config'
 alias r='rails'
