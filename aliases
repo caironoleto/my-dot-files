@@ -221,3 +221,6 @@ alias sync='rsync -v -r -u --progress /Users/caironoleto/Music/iTunes/iTunes\ Mu
 alias mg='rails g migration'
 alias munico='p unico && RAILS_ENV=development rake db:migrate && cd -'
 alias pjs='phantomjs'
+alias pis='ruby ~/Sites/MyApps/dot-files/pis_pasep_generator.rb'
+alias update='bash ~/Sites/Nohup/conversoes/update.sh'
+alias raposos='psql raposos_development'
