@@ -1,0 +1,14 @@
+[user]
+	name = Cairo Noleto
+	email = caironoleto@gmail.com
+[color]
+	ui = true
+[core]
+	excludesfile = /Users/caironoleto/.gitignore
+	editor = vim
+[push]
+	default = matching
+[alias]
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+[include]
+        path = /Users/caironoleto/.heroku
