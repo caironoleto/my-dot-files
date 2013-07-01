@@ -188,22 +188,22 @@ function osinfo() {
 alias configuration_changed='say Configured changed!'
 
 function staging() {
-  echo '[heroku]' > ~/.nohup
-  echo '  remote=staging' >> ~/.nohup
+  echo '[heroku]' > ~/.heroku
+  echo '  remote=staging' >> ~/.heroku
   echo 'Staging configurated'
   configuration_changed
 }
 
 function production() {
-  echo '[heroku]' > ~/.nohup
-  echo '  remote=production' >> ~/.nohup
+  echo '[heroku]' > ~/.heroku
+  echo '  remote=production' >> ~/.heroku
   echo 'Production configurated'
   configuration_changed
 }
 
 function training() {
-  echo '[heroku]' > ~/.nohup
-  echo '  remote=training' >> ~/.nohup
+  echo '[heroku]' > ~/.heroku
+  echo '  remote=training' >> ~/.heroku
   echo 'Training configurated'
   configuration_changed
 }
