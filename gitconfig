@@ -11,4 +11,4 @@
 [alias]
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 [include]
-        path = /Users/caironoleto/.heroku
+        path = /Users/caironoleto/.my_heroku_config
