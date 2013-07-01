@@ -45,3 +45,8 @@ tmp/**/*
 .env
 *.ret
 *.dump
+.env
+.ruby-gemset
+.ruby-version
+*.sql
+*.zip
