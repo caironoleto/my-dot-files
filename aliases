@@ -187,25 +187,23 @@ function osinfo() {
 
 alias configuration_changed='say Configured changed!'
 
-function staging() {
-  echo '[heroku]' > ~/.heroku
-  echo '  remote=staging' >> ~/.heroku
-  echo 'Staging configurated'
+function heroku_write {
+  echo '[heroku]' > ~/.my_heroku_config
+  echo "    remote=$1" >> ~/.my_heroku_config
+  echo "$1 configurated"
   configuration_changed
 }
 
-function production() {
-  echo '[heroku]' > ~/.heroku
-  echo '  remote=production' >> ~/.heroku
-  echo 'Production configurated'
-  configuration_changed
+function staging {
+  heroku_write staging
 }
 
-function training() {
-  echo '[heroku]' > ~/.heroku
-  echo '  remote=training' >> ~/.heroku
-  echo 'Training configurated'
-  configuration_changed
+function production {
+  heroku_write production
+}
+
+function training {
+  heroku_write training
 }
 
 alias ls='ls -G'
