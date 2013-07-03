@@ -196,14 +196,17 @@ function heroku_write {
 
 function staging {
   heroku_write staging
+  gco staging
 }
 
 function production {
   heroku_write production
+  gco production
 }
 
 function training {
   heroku_write training
+  gco training
 }
 
 alias ls='ls -G'
