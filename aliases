@@ -80,16 +80,14 @@ alias netstat="sudo lsof -i -P"
 
 alias colorslist="set | egrep 'COLOR_\w*'"  # lists all the colors
 
-function deploy() {
+function deploy {
   echo "Current configuration is for `git config --get heroku.remote`"
   echo -n 'Continue? [yn] '
   read continue
 
   if [ $continue = 'y' ]; then
-    if [ $1 ]; then
-      git push `git config --get heroku.remote` $1:master
-      heroku run rake db:migrate
-    fi
+    git push `git config --get heroku.remote` `git config --get heroku.remote`:master
+    heroku run rake db:migrate
 
     say Deploy finished!
   fi
