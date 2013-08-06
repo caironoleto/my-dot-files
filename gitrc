@@ -34,7 +34,6 @@ alias greset='git reset HEAD\^ && grh .'
 alias ignore_empty='find . \( -type d -empty \) -and \( -not -regex ./\.git.* \) -exec touch {}/.gitignore \;'
 alias gitrc="cat ~/.gitrc"
 alias stash="git add . && git commit -m 'Stash' && gco master"
-alias go="git rebase --continue"
 alias stop="git rebase --abort"
 alias skip="git rebase --skip"
 alias gpc="git cherry-pick"
