@@ -225,6 +225,10 @@ alias update='bash ~/Sites/Nohup/conversoes/update.sh'
 alias raposos='psql raposos_development'
 alias pow='powder'
 
+function single {
+rake test TEST=$1
+}
+
 function dev {
   psql `ruby -e 'require "yaml"; puts YAML.load_file("config/database.yml")["development"]["database"]'`
 }
