@@ -12,6 +12,8 @@
 #
 "\e[B": history-search-forward
 "\e[A": history-search-backward
+"\e[1;5C": forward-word"
+"\e[1;5D": backward-word"
  
 $if Bash
   # F10 toggles mc on and off
