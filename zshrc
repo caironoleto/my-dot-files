@@ -52,8 +52,10 @@ source ~/.gitrc
 export VISUAL=vim
 export EDITOR=vim
 export LANG=pt_BR.UTF-8
+export GOPATH=/Users/caironoleto/Sites/gocode
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export PATH=$PATH:${GOPATH//://bin:}/bin
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
