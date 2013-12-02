@@ -59,6 +59,7 @@ alias gcap='CI=true guard'
 # alias run_units='run spec/business && run spec/models'
 alias uni="rails s puma -p 8080 -d"
 alias fs="foreman start"
+alias fsdev="foreman start -f Procfile.development"
 alias u="uni"
 alias ku="ps aux | grep 'rails s' | grep 'grep' -v | cut -c13-23 | xargs kill -9"
 alias ru="ku && u"
