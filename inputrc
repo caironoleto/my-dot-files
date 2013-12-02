@@ -10,6 +10,9 @@
 # is searched (like 4dos for e.g.).
 # Note to get rid of a line just Ctrl-C
 #
+set input-meta on
+set output-meta on
+set convert-meta off
 "\e[B": history-search-forward
 "\e[A": history-search-backward
 "\e[1;5C": forward-word"
