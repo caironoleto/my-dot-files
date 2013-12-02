@@ -52,3 +52,4 @@ tmp/**/*
 *.zip
 .powrc
 .powenv
+config/database.yml
