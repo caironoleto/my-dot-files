@@ -53,3 +53,5 @@ tmp/**/*
 .powrc
 .powenv
 config/database.yml
+Procfile.local
+public/assets

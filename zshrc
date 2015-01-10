@@ -56,6 +56,11 @@ export GOPATH=/Users/caironoleto/Sites/gocode
 
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export PATH=$PATH:${GOPATH//://bin:}/bin
+export PATH=$PATH:$HOME/.azk/bin
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+bindkey -e
+bindkey '^[[1;5C' forward-word
+bindkey '^[[1;5D' backward-word
