@@ -49,8 +49,8 @@ unsetopt correct_all
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
 source ~/.aliases
 source ~/.gitrc
-export VISUAL=vim
-export EDITOR=vim
+export VISUAL=emacs
+export EDITOR=emacs
 export LANG=pt_BR.UTF-8
 export GOPATH=/Users/caironoleto/Sites/gocode
 
@@ -64,3 +64,9 @@ export PATH="/usr/local/heroku/bin:$PATH"
 bindkey -e
 bindkey '^[[1;5C' forward-word
 bindkey '^[[1;5D' backward-word
+
+# The next line updates PATH for the Google Cloud SDK.
+source '/Users/caironoleto/google-cloud-sdk/path.zsh.inc'
+
+# The next line enables shell command completion for gcloud.
+source '/Users/caironoleto/google-cloud-sdk/completion.zsh.inc'

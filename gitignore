@@ -54,4 +54,8 @@ tmp/**/*
 .powenv
 config/database.yml
 Procfile.local
-public/assets
+config/database.old.yml
+.azk
+.projectile
+node_modules
+.bundle

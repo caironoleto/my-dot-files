@@ -1,7 +1,7 @@
 alias gs='git status'
 alias gl='git pull'
 alias gp='git push'
-alias gd='git diff'
+alias gd='git diff --color | diff-so-fancy | less'
 alias ga='git add'
 alias gcl='git config --list'
 alias gc='git commit --verbose'
@@ -10,12 +10,16 @@ alias gb='git branch'
 alias gbc='git branch --color'
 alias gba='git branch -a'
 alias gco='git checkout'
+function gcot {
+  git checkout --track enjoei/$1 $1
+}
 alias gt='git tag'
 alias gpt='git push --tags'
 alias gpwt="git push && git push --tags"
 alias lg="git lg"
 alias cgs='c && gs'
 alias gpo='git push -u origin `git rev-parse --abbrev-ref HEAD`'
+alias gpc='git push -u caironoleto `git rev-parse --abbrev-ref HEAD`'
 alias gpatch='git diff master -p'
 alias grm="git rm -rf"
 alias gitx="open -b nl.frim.GitX"
@@ -33,9 +37,8 @@ alias grh="git reset HEAD"
 alias greset='git reset HEAD\^ && grh .'
 alias ignore_empty='find . \( -type d -empty \) -and \( -not -regex ./\.git.* \) -exec touch {}/.gitignore \;'
 alias gitrc="cat ~/.gitrc"
-alias stash="git add . && git commit -m 'Stash' && gco master"
+alias stash="git add . && git commit -m 'Stash'"
 alias stop="git rebase --abort"
 alias skip="git rebase --skip"
-alias gpc="git cherry-pick"
 alias rename="gc --amend"
 alias show="git show"

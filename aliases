@@ -1,9 +1,9 @@
 alias ack='ag'
 alias ls='ls -FG'
 alias ll='ls -lah'
-alias ..='cd ..;' 
+alias ..='cd ..;'
 alias ...='.. ..'
-alias g='grep -i' 
+alias g='grep -i'
 alias h='history|g'
 alias ducks='du -cks * | sort -rn|head -11'
 alias top='top -o cpu'
@@ -61,8 +61,8 @@ alias gcap='CI=true guard'
 alias uni="rails s puma -p 8080 -d"
 alias fs="foreman start"
 alias fsdev="foreman start -f Procfile.development"
-alias listing="rails s -p 3001"
-alias enjoei="rails s -p 3000"
+alias listing="rails s -p 3001 -b 0.0.0.0"
+alias server="rails s -p 3000 -b 0.0.0.0"
 alias rc="rails c"
 alias u="uni"
 alias ku="ps aux | grep 'rails s' | grep 'grep' -v | cut -c13-23 | xargs kill -9"
@@ -180,7 +180,7 @@ function extract() {
 }
 
 function manpdf() { man -t $@ | open -f -a Preview; }
-function osinfo() { 
+function osinfo() {
    x1="$(/usr/bin/sw_vers -productName)"
    x2="$(/usr/bin/sw_vers -productVersion)"
    x3="$(/usr/bin/sw_vers -buildVersion)"
@@ -217,8 +217,8 @@ function production {
   heroku_write production
 }
 
-function training {
-  heroku_write training
+function mobile {
+  heroku_write mobile
 }
 
 alias sdb='cd ~/Sites/Enjoei-databases && fsdev'
@@ -245,7 +245,7 @@ function single {
 }
 
 function dev {
-  psql `ruby -e 'require "yaml"; puts YAML.load_file("config/database.yml")["development"]["database"]'`
+  psql `ruby -e 'require "yaml"; puts YAML.load_file("config/database.old.yml")["development"]["database"]'`
 }
 
 function fresh {
@@ -254,4 +254,22 @@ function fresh {
 
 function hdb {
  psql `heroku config:get DATABASE_URL`
+}
+alias pgps="heroku pg:ps"
+alias pgkill="heroku pg:kill -f"
+alias hstop="heroku stop"
+
+# azk
+alias azks="azk shell"
+
+function azkrails {
+  azks -c "bundle exec rails $*"
+}
+
+function azkrake {
+  azks -c "bundle exec rake $*"
+}
+
+function for_review {
+  ruby -e "users = ['@andersondias', '@MarceloCajueiro', '@oliveiraethales', '@pedroandrade', '@vyper', '@eduresende', '@fellix']; puts \"#{users.shuffle.first(3).join(' ')}"\"
 }
