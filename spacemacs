@@ -108,7 +108,8 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-dark
+   dotspacemacs-themes '(monokai
+                         spacemacs-dark
                          spacemacs-light
                          solarized-light
                          solarized-dark
@@ -253,6 +254,10 @@ any user code here.  The exception is org related code, which should be placed
 in `dotspacemacs/user-config'."
   (setq-default git-magit-status-fullscreen t)
   (setq helm-candidate-number-limit 10)
+  (require 'whitespace)
+  (setq whitespace-line-column 80)
+  (setq whitespace-style '(face lines-tail))
+  (global-whitespace-mode +1)
   )
 
 (defun dotspacemacs/user-config ()

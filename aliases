@@ -63,6 +63,7 @@ alias fs="foreman start"
 alias fsdev="foreman start -f Procfile.development"
 alias listing="rails s -p 3001 -b 0.0.0.0"
 alias server="rails s -p 3000 -b 0.0.0.0"
+alias workers="QUEUE=* rake resque:work"
 alias rc="rails c"
 alias u="uni"
 alias ku="ps aux | grep 'rails s' | grep 'grep' -v | cut -c13-23 | xargs kill -9"
@@ -279,3 +280,14 @@ function azkrake {
 function for_review {
   ruby -e "users = ['@andersondias', '@MarceloCajueiro', '@oliveiraethales', '@pedroandrade', '@vyper', '@eduresende', '@fellix']; puts \"#{users.shuffle.first(3).join(' ')}"\"
 }
+
+function spacemacs {
+  TERM=xterm-256color emacs -nw
+}
+
+if [ $(expr substr $(uname -s) 1 5) = "Linux" ]
+then
+  alias pbcopy='xclip -selection clipboard'
+  alias pbpaste='xclip -selection clipboard -o'
+fi
+alias rcop="git diff --name-only | grep -v "spec/" | xargs rubocop -a"
