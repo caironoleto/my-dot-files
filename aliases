@@ -290,9 +290,14 @@ then
   alias pbcopy='xclip -selection clipboard'
   alias pbpaste='xclip -selection clipboard -o'
 fi
-alias rcop="git diff --cached --name-only | grep -v "spec/" | xargs rubocop -R"
+
+function rcop {
+  git status --porcelain | awk '{print $2}' | grep -v "spec/" | xargs rubocop -R
+}
+
 function drun {
-  clear | git status --porcelain | awk '{print $2}' | grep "spec/" | xargs rspec
+  clear
+  git status --porcelain | awk '{print $2}' | grep "spec/" | xargs rspec
 }
 
 function feature {
