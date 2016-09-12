@@ -292,7 +292,7 @@ then
 fi
 
 function rcop {
-  git status --porcelain | awk '{print $2}' | grep -v "spec/" | xargs rubocop -R
+  git status --porcelain | awk '{print $2}' | grep -v "spec/" | grep ".rb" | xargs rubocop -R
 }
 
 function drun {
