@@ -38,6 +38,7 @@ values."
            ruby-version-manager 'rvm
            ruby-test-runner 'rspec)
      ruby-on-rails
+     javascript
      ;; markdown
      ;; org
      ;; (shell :variables
@@ -258,6 +259,8 @@ in `dotspacemacs/user-config'."
   (setq whitespace-line-column 80)
   (setq whitespace-style '(face lines-tail))
   (global-whitespace-mode +1)
+  (setq-default js-indent-level 2
+                js2-basic-offset 2)
   )
 
 (defun dotspacemacs/user-config ()
