@@ -285,12 +285,6 @@ function spacemacs {
   TERM=xterm-256color emacs -nw
 }
 
-if [ $(expr substr $(uname -s) 1 5) = "Linux" ]
-then
-  alias pbcopy='xclip -selection clipboard'
-  alias pbpaste='xclip -selection clipboard -o'
-fi
-
 function rcop {
   git status --porcelain | awk '{print $2}' | grep -v "spec/" | grep ".rb" | xargs rubocop -R
 }
