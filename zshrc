@@ -49,6 +49,7 @@ unsetopt correct_all
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
 source ~/.aliases
 source ~/.gitrc
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 export VISUAL=emacs
 export EDITOR=emacs
 export LANG=pt_BR.UTF-8
