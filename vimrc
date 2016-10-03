@@ -7,6 +7,9 @@ set visualbell       " no sounds
 set colorcolumn=80   " column with 80
 set wildmode=list    " expand and folders/tabs when opening a file
 set backspace=2      " makes backspace work as it should work
+set mouse=a
+set wildignore+=*/public/*,*/tmp/*
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git|public'
 
 filetype off         " required
 let mapleader=","
@@ -64,6 +67,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'isRuslan/vim-es6'
 Plugin 'ervandew/supertab'
+Plugin 'mileszs/ack.vim'
 
 call vundle#end()            " required
 filetype on
