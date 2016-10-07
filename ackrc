@@ -4,6 +4,7 @@
 --ignore-dir=public/
 --ignore-dir=node_modules/
 --ignore-dir=tmp/
+--ignore-dir=coverage/
 
 #make sure ack knows how to search common filetypes used in rails projects
 --type-add=css=scss
