@@ -4,7 +4,7 @@ set hlsearch         " highlight search results
 set cursorline       " highlight cursor line
 set laststatus=2     " this is needed for airline
 set visualbell       " no sounds
-set colorcolumn=80   " column with 80
+set colorcolumn=90   " column with 80
 set wildmode=list    " expand and folders/tabs when opening a file
 set backspace=2      " makes backspace work as it should work
 set mouse=a

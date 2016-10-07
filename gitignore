@@ -59,3 +59,4 @@ config/database.old.yml
 .projectile
 node_modules
 .bundle
+public/assets
