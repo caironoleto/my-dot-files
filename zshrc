@@ -65,7 +65,3 @@ export PATH="/usr/local/heroku/bin:$PATH"
 bindkey -e
 bindkey '^[[1;5C' forward-word
 bindkey '^[[1;5D' backward-word
-
-if [ "$COLORTERM" = "xfce4-terminal"  ] ; then
-  export TERM=xterm-256color
-fi
