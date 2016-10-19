@@ -3,8 +3,7 @@ set number           " shows line numbers
 set hlsearch         " highlight search results
 set cursorline       " highlight cursor line
 set laststatus=2     " this is needed for airline
-set visualbell       " no sounds
-set colorcolumn=90   " column with 90
+let &colorcolumn="80,".join(range(90,256),",")"   " column with 80
 set wildmode=list    " expand and folders/tabs when opening a file
 set backspace=2      " makes backspace work as it should work
 set mouse=a
@@ -75,7 +74,6 @@ filetype plugin indent on    " required
 syntax enable
 
 " Color scheme
-" colorscheme Tomorrow-Night-Eighties
 colorscheme solarized
 set background=dark
 let g:solarized_contrast="low"
