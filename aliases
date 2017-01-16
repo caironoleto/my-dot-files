@@ -295,3 +295,5 @@ function drun {
 function feature {
   git flow feature start $*
 }
+
+alias cmerged="gco master && git up && git branch --merged | grep -v master | xargs git branch -d"
