@@ -19,7 +19,7 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'flazz/vim-colorschemes'
 Plugin 'tpope/vim-rails'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -74,7 +74,7 @@ filetype plugin indent on    " required
 syntax enable
 
 " Color scheme
-colorscheme solarized
+colorscheme molokai
 set background=dark
 let g:solarized_contrast="low"
 let g:solarized_menu=0
