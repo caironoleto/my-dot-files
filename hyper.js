@@ -66,7 +66,7 @@ module.exports = {
     // make sure to use a full path if the binary name doesn't work
     // (e.g `C:\\Windows\\System32\\bash.exe` instad of just `bash.exe`)
     // if you're using powershell, make sure to remove the `--login` below
-    shell: '',
+    shell: '/bin/zsh',
 
     // for setting shell arguments (i.e. for using interactive shellArgs: ['-i'])
     // by default ['--login'] will be used
@@ -79,7 +79,7 @@ module.exports = {
     bell: 'SOUND',
 
     // if true, selected text will automatically be copied to the clipboard
-    copyOnSelect: false
+    copyOnSelect: true
 
     // if true, on right click selected text will be copied or pasted if no
     // selection is present (true by default on Windows)
@@ -97,7 +97,10 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: [],
+  plugins: [
+    "hyperyellow",
+    "hypercwd"
+  ],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
