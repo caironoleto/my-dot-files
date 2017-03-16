@@ -67,6 +67,7 @@ Plugin 'mxw/vim-jsx'
 Plugin 'isRuslan/vim-es6'
 Plugin 'ervandew/supertab'
 Plugin 'mileszs/ack.vim'
+Plugin 'kchmck/vim-coffee-script'
 
 call vundle#end()            " required
 filetype on
