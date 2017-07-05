@@ -8,7 +8,7 @@ set wildmode=list    " expand and folders/tabs when opening a file
 set backspace=2      " makes backspace work as it should work
 set mouse=a
 set wildignore+=*/public/*,*/tmp/*
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git|public'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|public\|deps\|_build\|fonts'
 
 filetype off         " required
 let mapleader=","
@@ -19,15 +19,16 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
-Plugin 'flazz/vim-colorschemes'
 Plugin 'tpope/vim-rails'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
+Plugin 'SirVer/ultisnips'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'flazz/vim-colorschemes'
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'rking/ag.vim'
@@ -42,7 +43,7 @@ Plugin 'maksimr/vim-jsbeautify'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'Konfekt/FastFold'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'scrooloose/syntastic'
+" Plugin 'scrooloose/syntastic'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'mattreduce/vim-mix'
 Plugin 'majutsushi/tagbar'
@@ -64,6 +65,8 @@ Plugin 'tpope/vim-surround'
 Plugin 'sickill/vim-pasta'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+Plugin 'leshill/vim-json'
+Plugin 'w0rp/ale'
 Plugin 'isRuslan/vim-es6'
 Plugin 'ervandew/supertab'
 Plugin 'mileszs/ack.vim'
@@ -75,11 +78,17 @@ filetype plugin indent on    " required
 syntax enable
 
 " Color scheme
-colorscheme molokai
+" colorscheme molokai
+colorscheme Tomorrow-Night-Bright
 set background=dark
-let g:solarized_contrast="low"
-let g:solarized_menu=0
-let g:tmuxline_theme = 'iceberg'
+" let g:solarized_contrast="low"
+" let g:solarized_menu=0
+" let g:tmuxline_theme = 'iceberg'
+
+" Airline config
+let g:airline_theme='molokai'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
 
 " tags
 " set tags=./.tags;,~/.vimtags
@@ -99,9 +108,6 @@ set foldlevelstart=10
 set foldnestmax=10
 set foldmethod=indent
 
-" Airline config
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
 
 " Display tabs and trailing spaces visually
 set list listchars=tab:\ \ ,trail:·
@@ -133,6 +139,7 @@ let g:rspec_command = "!bundle exec rspec {spec} --format=progress"
 " ==== NERD tree
 " " Open the project tree and expose current file in the nerdtree with Ctrl-\
 nnoremap <silent> <C-\> :NERDTreeFind<CR>:vertical<CR>
+let NERDTreeIgnore = ['build$']
 
 "Move back and forth through previous and next buffers
 "with ,z and ,x
@@ -197,3 +204,20 @@ if executable('ag')
 
   map <Leader>f :Ag<SPACE>
 endif
+
+" Javascript config
+
+let g:javascript_plugin_flow = 1
+let g:jsx_ext_required = 0
+
+" Snips config
+"
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsEditSplit="vertical"
+
+" Ale config
+"
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_javascript_eslint_use_global = 1
