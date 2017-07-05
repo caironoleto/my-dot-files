@@ -20,3 +20,7 @@ if [ "$COLORTERM" = "xfce4-terminal"   ] ; then
 fi
 
 export GEM_EDITOR=vim
+
+if [ -d "$HOME/platform-tools" ] ; then
+  export PATH="$HOME/platform-tools:$PATH"
+fi
