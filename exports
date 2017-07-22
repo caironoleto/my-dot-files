@@ -5,6 +5,7 @@ export LANG=pt_BR.UTF-8
 export GOPATH=$HOME/sites/gocode
 
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export PATH=$HOME/.exenv/bin:$PATH # Add exenv
 export PATH=$PATH:${GOPATH//://bin:}/bin
 export PATH=$PATH:$HOME/.azk/bin
 
@@ -24,3 +25,5 @@ export GEM_EDITOR=vim
 if [ -d "$HOME/platform-tools" ] ; then
   export PATH="$HOME/platform-tools:$PATH"
 fi
+
+eval "$(exenv init -)"
