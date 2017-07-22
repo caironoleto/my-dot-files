@@ -304,3 +304,15 @@ alias codeclimate="docker run \
   --volume /var/run/docker.sock:/var/run/docker.sock \
   --volume /tmp/cc:/tmp/cc \
   codeclimate/codeclimate"
+
+function update_js {
+  p saraiva
+  cd apps/react && yarn install
+  p saraiva
+  cd apps/bo && yarn install
+}
+
+function ojs {
+  p saraiva
+  cd apps/$1/lib/$1/web/static/js
+}

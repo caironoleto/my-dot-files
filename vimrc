@@ -125,7 +125,6 @@ set sidescroll=1
 " search
 set incsearch       " Find the next match as we type the search
 set hlsearch        " Highlight searches by default
-set ignorecase      " Ignore case when searching...
 set smartcase       " ...unless we type a capital
 
 " RSpec.vim mappings
@@ -221,3 +220,4 @@ let g:UltiSnipsEditSplit="vertical"
 "
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_javascript_eslint_use_global = 1
+let g:ale_linters = { 'javascript': [] }
