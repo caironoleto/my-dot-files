@@ -71,6 +71,7 @@ Plugin 'isRuslan/vim-es6'
 Plugin 'ervandew/supertab'
 Plugin 'mileszs/ack.vim'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'matze/vim-move'
 
 call vundle#end()            " required
 filetype on
@@ -221,3 +222,7 @@ let g:UltiSnipsEditSplit="vertical"
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_javascript_eslint_use_global = 1
 let g:ale_linters = { 'javascript': [] }
+
+" Vim move config
+"
+let g:move_key_modifier = 'C'
