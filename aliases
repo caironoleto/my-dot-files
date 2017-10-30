@@ -314,5 +314,5 @@ function update_js {
 
 function ojs {
   p saraiva
-  cd apps/$1/lib/$1/web/static/js
+  cd apps/$1/lib/$1/web/static/js/app
 }
