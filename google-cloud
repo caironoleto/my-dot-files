@@ -1,0 +1,8 @@
+if [ -d "$HOME/.google-cloud-sdk" ]; then
+  # update PATH for the Google Cloud SDK.
+  source "$HOME/.google-cloud-sdk/path.zsh.inc"
+  # enable zsh c.etion for gcloud.
+  source "$HOME/.google-cloud-sdk/completion.zsh.inc"
+else
+  echo "error: expected to find Google Cloud SDK in ~/bin/google-cloud-sdk"
+fi

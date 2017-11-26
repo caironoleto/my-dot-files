@@ -51,6 +51,7 @@ source ~/.aliases
 source ~/.gitrc
 source ~/.exports
 source ~/.loadasdf
+source ~/.google-cloud
 
 fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit && compinit -i
