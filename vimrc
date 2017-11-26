@@ -8,7 +8,7 @@ set wildmode=list    " expand and folders/tabs when opening a file
 set backspace=2      " makes backspace work as it should work
 set mouse=a
 set wildignore+=*/public/*,*/tmp/*
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|public\|deps\|_build\|fonts'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|public\|deps\|_build\|fonts\|ath\.\*'
 
 filetype off         " required
 let mapleader=","
