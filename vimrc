@@ -226,3 +226,9 @@ let g:ale_linters = { 'javascript': [] }
 " Vim move config
 "
 let g:move_key_modifier = 'C'
+
+" Multi Cursor Config
+let g:multi_cursor_next_key='<C-n>'
+let g:multi_cursor_prev_key='<C-p>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
