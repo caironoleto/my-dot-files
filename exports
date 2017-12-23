@@ -26,4 +26,6 @@ if [ -d "$HOME/platform-tools" ] ; then
   export PATH="$HOME/platform-tools:$PATH"
 fi
 
-eval "$(exenv init -)"
+if [ -x "$(command -v exenv)" ]; then
+  eval "$(exenv init -)"
+fi
