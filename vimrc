@@ -4,7 +4,7 @@ set hlsearch         " highlight search results
 set cursorline       " highlight cursor line
 set laststatus=2     " this is needed for airline
 let &colorcolumn="80,".join(range(90,256),",")"   " column with 80
-set wildmode=list    " expand and folders/tabs when opening a file
+set wildmode=list:longest,full    " expand and folders/tabs when opening a file
 set backspace=2      " makes backspace work as it should work
 set mouse=a
 set wildignore+=*/public/*,*/tmp/*
@@ -49,7 +49,6 @@ Plugin 'mattreduce/vim-mix'
 Plugin 'majutsushi/tagbar'
 Plugin 'neovimhaskell/haskell-vim'
 Plugin 'DataWraith/auto_mkdir'
-Plugin 'jodosha/vim-greenbar'
 Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'mattn/webapi-vim'
