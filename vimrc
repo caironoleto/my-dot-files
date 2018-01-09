@@ -65,6 +65,7 @@ Plugin 'sickill/vim-pasta'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'leshill/vim-json'
+" ale is Asynchronous Lint Engine
 Plugin 'w0rp/ale'
 Plugin 'isRuslan/vim-es6'
 Plugin 'ervandew/supertab'
