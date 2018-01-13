@@ -9,6 +9,7 @@ set backspace=2      " makes backspace work as it should work
 set mouse=a
 set wildignore+=*/public/*,*/tmp/*
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|public\|deps\|_build\|fonts\|ath\.\*'
+set clipboard=unnamed " copy to clipboard (works on mac)
 
 filetype off         " required
 let mapleader=","
@@ -90,6 +91,9 @@ set background=dark
 let g:airline_theme='molokai'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_section_y = 0
+let g:airline#extensions#branch#enabled = 0
+let g:airline#extensions#fileformat#enabled = 0
 
 " tags
 " set tags=./.tags;,~/.vimtags
