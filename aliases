@@ -316,3 +316,8 @@ function ojs {
   p saraiva
   cd apps/$1/lib/$1/web/static/js/app
 }
+
+if [ -f ~/.kubectl-alias ]
+then
+  source ~/.kubectl-alias
+fi
