@@ -1,6 +1,5 @@
 set nocompatible     " be iMproved, required
 set number           " shows line numbers
-set hlsearch         " highlight search results
 set cursorline       " highlight cursor line
 set laststatus=2     " this is needed for airline
 let &colorcolumn="80,".join(range(90,256),",")"   " column with 80
@@ -19,60 +18,30 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rails'
-Plugin 'vim-ruby/vim-ruby'
+"Plugin 'vim-ruby/vim-ruby'
 Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
 Plugin 'SirVer/ultisnips'
-Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'rking/ag.vim'
-"Plugin 'xolox/vim-easytags'
-Plugin 'xolox/vim-misc'
-Plugin 'thoughtbot/vim-rspec'
-Plugin 'tpope/vim-dispatch'
 Plugin 'airblade/vim-gitgutter'
-"Plugin 'Valloric/YouCompleteMe'
-Plugin 'AndrewRadev/splitjoin.vim'
-Plugin 'maksimr/vim-jsbeautify'
-Plugin 'junegunn/vim-easy-align'
-Plugin 'Konfekt/FastFold'
-Plugin 'terryma/vim-multiple-cursors'
-" Plugin 'scrooloose/syntastic'
 Plugin 'elixir-lang/vim-elixir'
-Plugin 'mattreduce/vim-mix'
-Plugin 'majutsushi/tagbar'
-Plugin 'neovimhaskell/haskell-vim'
 Plugin 'DataWraith/auto_mkdir'
-Plugin 'kana/vim-textobj-user'
-Plugin 'nelstrom/vim-textobj-rubyblock'
-Plugin 'mattn/webapi-vim'
-Plugin 'mattn/gist-vim'
-Plugin 'tpope/vim-commentary'
-Plugin 'fatih/vim-go'
-Plugin 'rhysd/vim-crystal'
-" Plugin 'eagletmt/ghcmod-vim'
-" Plugin 'Shougo/vimproc.vim'
-Plugin 'ngmy/vim-rubocop'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'tpope/vim-surround'
 Plugin 'sickill/vim-pasta'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'leshill/vim-json'
 " ale is Asynchronous Lint Engine
-Plugin 'w0rp/ale'
 Plugin 'isRuslan/vim-es6'
 Plugin 'ervandew/supertab'
-Plugin 'mileszs/ack.vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'matze/vim-move'
+Plugin 'tpope/vim-fugitive'
 
 call vundle#end()            " required
 filetype on
@@ -113,7 +82,6 @@ set foldlevelstart=10
 set foldnestmax=10
 set foldmethod=indent
 
-
 " Display tabs and trailing spaces visually
 set list listchars=tab:\ \ ,trail:·
 
@@ -132,14 +100,6 @@ set incsearch       " Find the next match as we type the search
 set hlsearch        " Highlight searches by default
 set smartcase       " ...unless we type a capital
 
-" RSpec.vim mappings
-au FileType ruby map <Leader>t :call RunCurrentSpecFile()<CR>
-au FileType ruby map <Leader>s :call RunNearestSpec()<CR>
-au FileType ruby map <Leader>l :call RunLastSpec()<CR>
-au FileType ruby map <Leader>a :call RunAllSpecs()<CR>
-let g:rspec_runner = "os_x_iterm"
-let g:rspec_command = "!bundle exec rspec {spec} --format=progress"
-
 " ==== NERD tree
 " " Open the project tree and expose current file in the nerdtree with Ctrl-\
 nnoremap <silent> <C-\> :NERDTreeFind<CR>:vertical<CR>
@@ -157,9 +117,6 @@ nnoremap <Space> za
 " ,oq to open it back up (rare)
 nmap <silent> ,qc :cclose<CR>
 nmap <silent> ,qo :copen<CR>
-
-" Text objects
-runtime macros/matchit.vim
 
 function! <SID>StripTrailingWhitespaces()
   " Preparation: save last search, and cursor position.
@@ -181,33 +138,9 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-" Tagbar
-nmap <F9> :TagbarToggle<CR>
-
 " Resize
 nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
-
-" The Silver Searcher
-" Inspired by http://robots.thoughtbot.com/faster-grepping-in-vim/
-if executable('ag')
-  " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor\ --path-to-agignore\ $HOME/.agignore
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-
-  " bind K to grep word under cursor
-  nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-
-  " bind , (backward slash) to grep shortcut
-  command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-
-  map <Leader>f :Ag<SPACE>
-endif
 
 " Javascript config
 
@@ -221,18 +154,6 @@ let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
 
-" Ale config
-"
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_javascript_eslint_use_global = 1
-let g:ale_linters = { 'javascript': ['eslint', 'standard'], 'ruby': [], 'eruby': [] }
-
 " Vim move config
 "
 let g:move_key_modifier = 'C'
-
-" Multi Cursor Config
-let g:multi_cursor_next_key='<C-n>'
-let g:multi_cursor_prev_key='<C-p>'
-let g:multi_cursor_skip_key='<C-x>'
-let g:multi_cursor_quit_key='<Esc>'
