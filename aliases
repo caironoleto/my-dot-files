@@ -323,3 +323,8 @@ if [ -f ~/.kubectl-alias ]
 then
   source ~/.kubectl-alias
 fi
+
+# Tmux alias
+alias tls="tmux ls"
+alias tat="tmux a -t"
+alias tn="tmux new -s"
