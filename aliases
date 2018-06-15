@@ -7,6 +7,7 @@ alias h='history|g'
 alias ducks='du -cks * | sort -rn|head -11'
 alias top='top -o cpu'
 alias v='mvim'
+alias ":e"=vim
 alias reload="cd .. && cd -"
 
 alias et="m"
