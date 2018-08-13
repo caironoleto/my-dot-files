@@ -162,6 +162,18 @@ function run() {
   # say Specs Finished!
 }
 
+function kexec() {
+  case $1 in
+    "help") printf "USAGE:\n\n    kexec namespace command\n"
+            ;;
+    *) namespace=$1
+       shift
+       pod=$(kubectl get pods --field-selector=status.phase=Running --output=jsonpath={.items\[0\].metadata.name} -n $namespace)
+       keti $pod -n $namespace $*
+       ;;
+  esac
+}
+
 function fr() {
   find $3 -type f -exec sed -i.bak "s#$1#$2#" {} \;
   find . -name '*.bak' -delete
