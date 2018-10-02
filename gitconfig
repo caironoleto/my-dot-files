@@ -25,3 +25,5 @@
 	newHighlight = green bold 22
 [commit]
 	template = ~/.gitmessage
+[fetch]
+	prune = true
