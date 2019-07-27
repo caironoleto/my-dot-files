@@ -1,3 +1,4 @@
+set langmenu=en_US.UTF-8
 set nocompatible     " be iMproved, required
 set number           " shows line numbers
 set cursorline       " highlight cursor line
@@ -6,9 +7,10 @@ let &colorcolumn="80,".join(range(90,256),",")"   " column with 80
 set wildmode=list:longest,full    " expand and folders/tabs when opening a file
 set backspace=2      " makes backspace work as it should work
 set mouse=a
-set wildignore+=*/public/*,*/tmp/*
+set wildignore+=*/public/*,*/tmp/*,*/deps/*
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|public\|deps\|_build\|fonts\|ath\.\*'
 set clipboard=unnamed " copy to clipboard (works on mac)
+let g:NERDTreeIgnore = ['^build$']
 
 filetype off         " required
 let mapleader=","
@@ -42,6 +44,7 @@ Plugin 'ervandew/supertab'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'matze/vim-move'
 Plugin 'tpope/vim-fugitive'
+Plugin 'dhruvasagar/vim-zoom'
 
 call vundle#end()            " required
 filetype on
@@ -59,9 +62,9 @@ set background=dark
 " Airline config
 let g:airline_theme='molokai'
 let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
 let g:airline_section_y = 0
 let g:airline#extensions#branch#enabled = 0
+let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#fileformat#enabled = 0
 
 " tags
