@@ -6,5 +6,5 @@ Dir['*'].each do |file|
   next if file =~ /install/
 
   target = File.join(home, ".#{file}")
-  `ln -nfs #{File.expand_path file} #{target}`
+  `unlink #{target}`
 end
