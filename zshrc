@@ -51,8 +51,8 @@ source ~/.aliases
 source ~/.gitrc
 source ~/.exports
 source ~/.loadasdf
-source ~/.google-cloud
-source ~/.phpbrew/bashrc
+# source ~/.google-cloud
+# source ~/.phpbrew/bashrc
 
 fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit && compinit -i
