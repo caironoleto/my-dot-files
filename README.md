@@ -15,8 +15,8 @@ Setup tmux keys in iTerm2, open preferences:
 * Prefix key: In Profiles (this override the iTerm2 default shortcut) -> Keys add a new key to `⌘ + a`, to send the hex code `0x02`;
 * Previous window: In Keys (this does not override defaults shortcuts) -> Key Binding add a new key to `⌘ + shift + [`, to send the hex code `0x02 0x70`;
 * Next window: In Keys -> Key Bindings add a new key to `⌘ + shift + ]`, to send the hex code `0x02 0x6E`;
-* ⌥` + ← to navigate among words: In Profiles, change the ⌥` + ← to send an Escape sequence with the key `b`;
-* ⌥` + → to navigate among words: In Profiles, change the ⌥` + → to send an Escape sequence with the key `f`.
+* `⌥` + ←` to navigate among words: In Profiles, change the `⌥` + ←` to send an Escape sequence with the key `b`;
+* `⌥` + →` to navigate among words: In Profiles, change the `⌥` + →` to send an Escape sequence with the key `f`.
 
 ### Installation
 
