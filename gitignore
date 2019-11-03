@@ -37,7 +37,6 @@ null
 pkg/*
 profile
 target
-temp*
 test-output
 Thumbs.db
 tmp*
@@ -60,3 +59,5 @@ config/database.old.yml
 node_modules
 .bundle
 public/assets
+.netlify
+.mix_tasks

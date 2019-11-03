@@ -3,7 +3,7 @@ set nocompatible     " be iMproved, required
 set number           " shows line numbers
 set cursorline       " highlight cursor line
 set laststatus=2     " this is needed for airline
-let &colorcolumn="80,".join(range(90,256),",")"   " column with 80
+let &colorcolumn="100,".join(range(120,256),",")"   " column with 100
 set wildmode=list:longest,full    " expand and folders/tabs when opening a file
 set backspace=2      " makes backspace work as it should work
 set mouse=a
@@ -44,7 +44,7 @@ Plugin 'ervandew/supertab'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'matze/vim-move'
 Plugin 'tpope/vim-fugitive'
-Plugin 'dhruvasagar/vim-zoom'
+Plugin 'rhysd/vim-grammarous'
 
 call vundle#end()            " required
 filetype on
