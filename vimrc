@@ -3,14 +3,13 @@ set nocompatible     " be iMproved, required
 set number           " shows line numbers
 set cursorline       " highlight cursor line
 set laststatus=2     " this is needed for airline
-let &colorcolumn="100,".join(range(120,256),",")"   " column with 100
+" let &colorcolumn="100,".join(range(120,256),",")"   " column with 100
+set wildmenu
 set wildmode=list:longest,full    " expand and folders/tabs when opening a file
 set backspace=2      " makes backspace work as it should work
 set mouse=a
 set wildignore+=*/public/*,*/tmp/*,*/deps/*
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|public\|deps\|_build\|fonts\|ath\.\*'
 set clipboard=unnamed " copy to clipboard (works on mac)
-let g:NERDTreeIgnore = ['^build$']
 
 filetype off         " required
 let mapleader=","
@@ -20,41 +19,40 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
-Plugin 'tpope/vim-rails'
-"Plugin 'vim-ruby/vim-ruby'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/nerdtree'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+
+" Snippets
+
+Plugin 'MaxMEllon/vim-jsx-pretty'
+Plugin 'SirVer/ultisnips'
+Plugin 'elixir-editors/vim-elixir'
+Plugin 'honza/vim-snippets'
+Plugin 'isRuslan/vim-es6'
+Plugin 'leshill/vim-json'
+Plugin 'pangloss/vim-javascript'
+
 Plugin 'airblade/vim-gitgutter'
-Plugin 'elixir-lang/vim-elixir'
 Plugin 'DataWraith/auto_mkdir'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'sickill/vim-pasta'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-Plugin 'leshill/vim-json'
-" ale is Asynchronous Lint Engine
-Plugin 'isRuslan/vim-es6'
 Plugin 'ervandew/supertab'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'matze/vim-move'
 Plugin 'tpope/vim-fugitive'
-Plugin 'rhysd/vim-grammarous'
+Plugin 'tpope/vim-projectionist'
+Plugin 'c-brenn/fuzzy-projectionist.vim'
+Plugin 'caironoleto/vim-projectionist-elixir'
 
 call vundle#end()            " required
+syntax on
 filetype on
 filetype plugin indent on    " required
-syntax enable
 
 " Color scheme
 " colorscheme molokai
 colorscheme Tomorrow-Night-Bright
-set background=dark
+" set background=dark
+hi Normal guibg=NONE ctermbg=NONE
 " let g:solarized_contrast="low"
 " let g:solarized_menu=0
 " let g:tmuxline_theme = 'iceberg'
