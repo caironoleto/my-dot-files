@@ -2,6 +2,9 @@
 ;; This file is loaded by Spacemacs at startup.
 ;; It must be stored in your home directory.
 
+(add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+(add-to-list 'default-frame-alist '(ns-appearance . dark))
+
 (defun dotspacemacs/layers ()
   "Configuration Layers declaration.
 You should not put any user code in this function besides modifying the variable
@@ -34,12 +37,12 @@ values."
      emacs-lisp
      git
      html
-     (ruby :variables
-           ruby-version-manager 'rvm
-           ruby-test-runner 'rspec)
-     ruby-on-rails
+     ;; (ruby :variables
+     ;;       ruby-version-manager 'rvm
+     ;;       ruby-test-runner 'rspec)
+     ;; ruby-on-rails
      javascript
-     ;; markdown
+     markdown
      ;; org
      ;; (shell :variables
      ;;        shell-default-height 30
@@ -48,7 +51,8 @@ values."
      ;; syntax-checking
      ;; version-control
      ;; erlang
-     ;; elixir
+     elixir
+     osx
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -282,3 +286,17 @@ layers configuration. You are free to put any user code."
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (reveal-in-osx-finder pbcopy osx-trash osx-dictionary ob-elixir mmm-mode markdown-toc markdown-mode launchctl gh-md flycheck-mix flycheck-credo flycheck alchemist elixir-mode which-key web-mode web-beautify use-package tagedit smeargle slim-mode scss-mode sass-mode rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv pug-mode projectile-rails orgit monokai-theme minitest magit-gitflow macrostep livid-mode json-mode js2-refactor js-doc hydra gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link fuzzy feature-mode exec-path-from-shell evil-visualstar evil-magit evil-escape emmet-mode elisp-slime-nav diminish company-web company-tern company-statistics coffee-mode chruby bundler bind-map auto-yasnippet auto-compile ace-window ac-ispell))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((((class color) (min-colors 257)) (:foreground "#F8F8F2" :background "#272822")) (((class color) (min-colors 89)) (:foreground "#F5F5F5" :background "#1B1E1C")))))
