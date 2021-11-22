@@ -2,12 +2,11 @@
 export VISUAL=emacs
 export EDITOR=emacs
 export LANG=pt_BR.UTF-8
-export GOPATH=$HOME/sites/gocode
 
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export PATH=$HOME/.exenv/bin:$PATH # Add exenv
-export PATH=$PATH:${GOPATH//://bin:}/bin
 export PATH=$PATH:$HOME/.azk/bin
+export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
