@@ -50,7 +50,6 @@ export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
 source ~/.aliases
 source ~/.gitrc
 source ~/.exports
-source ~/.loadasdf
 
 fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit && compinit -i
