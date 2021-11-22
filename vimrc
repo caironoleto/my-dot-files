@@ -26,7 +26,6 @@ Plugin 'vim-airline/vim-airline-themes'
 " Snippets
 
 Plugin 'MaxMEllon/vim-jsx-pretty'
-Plugin 'SirVer/ultisnips'
 Plugin 'elixir-editors/vim-elixir'
 Plugin 'honza/vim-snippets'
 Plugin 'isRuslan/vim-es6'
