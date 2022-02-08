@@ -28,3 +28,6 @@ fi
 if [ -x "$(command -v exenv)" ]; then
   eval "$(exenv init -)"
 fi
+
+# Export kerl options and avoid install erlang with java
+export KERL_CONFIGURE_OPTIONS="--without-javac --with-ssl=$(brew --prefix openssl@1.1)"
