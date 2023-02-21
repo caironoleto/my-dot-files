@@ -38,6 +38,8 @@ Plug 'tpope/vim-projectionist'
 Plug 'c-brenn/fuzzy-projectionist.vim'
 Plug 'caironoleto/vim-projectionist-elixir'
 
+Plug 'vim-autoformat/vim-autoformat'
+
 call plug#end()
 " End Plug setup
 
@@ -155,3 +157,11 @@ let g:UltiSnipsEditSplit="vertical"
 " Vim move config
 "
 let g:move_key_modifier = 'C'
+
+" vim-autoformat configs
+"
+let g:python3_host_prog="~/.asdf/shims/python3"
+let g:autoformat_autoindent = 0
+let g:autoformat_retab = 0
+let g:autoformat_remove_trailing_spaces = 0
+au BufWrite * :Autoformat
