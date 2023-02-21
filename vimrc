@@ -14,35 +14,33 @@ set clipboard=unnamed " copy to clipboard (works on mac)
 filetype off         " required
 let mapleader=","
 
-" Vundle config
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" Plug setup
+call plug#begin()
 
-Plugin 'gmarik/Vundle.vim'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'bling/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'flazz/vim-colorschemes'
+Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
-" Snippets
+Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'elixir-editors/vim-elixir'
+Plug 'honza/vim-snippets'
+Plug 'isRuslan/vim-es6'
+Plug 'leshill/vim-json'
+Plug 'pangloss/vim-javascript'
 
-Plugin 'MaxMEllon/vim-jsx-pretty'
-Plugin 'elixir-editors/vim-elixir'
-Plugin 'honza/vim-snippets'
-Plugin 'isRuslan/vim-es6'
-Plugin 'leshill/vim-json'
-Plugin 'pangloss/vim-javascript'
+Plug 'airblade/vim-gitgutter'
+Plug 'DataWraith/auto_mkdir'
+Plug 'jiangmiao/auto-pairs'
+Plug 'sickill/vim-pasta'
+Plug 'ervandew/supertab'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-projectionist'
+Plug 'c-brenn/fuzzy-projectionist.vim'
+Plug 'caironoleto/vim-projectionist-elixir'
 
-Plugin 'airblade/vim-gitgutter'
-Plugin 'DataWraith/auto_mkdir'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'sickill/vim-pasta'
-Plugin 'ervandew/supertab'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-projectionist'
-Plugin 'c-brenn/fuzzy-projectionist.vim'
-Plugin 'caironoleto/vim-projectionist-elixir'
+call plug#end()
+" End Plug setup
 
-call vundle#end()            " required
 syntax on
 filetype on
 filetype plugin indent on    " required

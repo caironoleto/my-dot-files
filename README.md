@@ -6,7 +6,7 @@ This is my dot files. I've using this dot-files since I don't know :P
 * [Install asdf](https://asdf-vm.com/#/core-manage-asdf-vm?id=install-asdf-vm);
 * [Install Fira Coda](https://github.com/tonsky/FiraCode/wiki);
 * [Install Powerline fonts](https://github.com/powerline/fonts);
-* [Install Vundle](https://github.com/VundleVim/Vundle.vim#quick-start).
+* [Install vim-plug](https://github.com/junegunn/vim-plug#vim).
 
 ## If you're using Mac
 
