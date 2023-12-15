@@ -42,6 +42,10 @@ Plug 'vim-autoformat/vim-autoformat'
 
 call plug#end()
 " End Plug setup
+"
+
+" use 'flazz/vim-colorschemes'
+" 'Tomorrow-Night-Bright'
 
 syntax on
 filetype on
