@@ -7,7 +7,12 @@
 --ignore-dir=shifts/
 --ignore-dir=deps/
 --ignore-dir=.elixir_ls/
+--ignore-dir=.next/
+--ignore-dir=dist/
 --ignore-dir=_build
+
+--ignore-file=ext:svg
+--ignore-file=is:erl_crash.dump
 
 #make sure ack knows how to search common filetypes used in rails projects
 --type-add=css=scss
