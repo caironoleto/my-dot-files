@@ -26,6 +26,7 @@
 .project
 .settings
 .svn
+.next
 ._*
 bin/*
 build
@@ -64,3 +65,6 @@ public/assets
 *.code-workspace
 .vscode
 .elixir_ls
+.pre-commit-config.yaml
+.github_token
+.openapikey
