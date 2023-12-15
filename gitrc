@@ -1,4 +1,5 @@
-alias gs='git status'
+alias gs='git stash'
+alias gsp='git stash pop'
 alias gl='git pull'
 alias gp='git push'
 function gd {
@@ -18,7 +19,7 @@ alias gt='git tag'
 alias gpt='git push --tags'
 alias gpwt="git push && git push --tags"
 alias lg="git lg"
-alias cgs='c && gs'
+alias cgs='c && git status'
 alias gpo='git push -u origin `git rev-parse --abbrev-ref HEAD`'
 alias gpc='git push -u caironoleto `git rev-parse --abbrev-ref HEAD`'
 alias gpatch='git diff master -p'
