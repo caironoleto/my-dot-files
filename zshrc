@@ -40,7 +40,7 @@ ZSH_THEME="ys"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git rails bundler kubectl docker-compose mix-fast)
+plugins=(git bundler kubectl docker-compose mix-fast)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -58,3 +58,11 @@ autoload -Uz compinit && compinit -i
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export ERL_AFLAGS="-kernel shell_history enabled"
+
+# pnpm
+export PNPM_HOME="/Users/cairo/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
