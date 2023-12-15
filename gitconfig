@@ -1,11 +1,11 @@
 [user]
 	name = Cairo Noleto
-	email = caironoleto@gmail.com
+	email = hey@caironoleto.dev
 [color]
 	ui = true
 [core]
 	excludesfile = ~/.gitignore
-	editor = vim
+	editor = nvim
 [push]
 	default = matching
 [alias]
@@ -29,3 +29,5 @@
 	prune = true
 [init]
 	defaultBranch = main
+[color "branch"]
+	upstream = yellow
