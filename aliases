@@ -9,6 +9,8 @@ alias top='top -o cpu'
 alias v='mvim'
 alias ":e"=vim
 alias reload="cd .. && cd -"
+alias :bp="echo 'Está na aba errada rapá'"
+alias :bn="echo 'Está na aba errada rapá'"
 
 alias et="m"
 
@@ -263,10 +265,6 @@ function single {
   bundle exec rake test TEST=$1
 }
 
-function dev {
-  psql `ruby -e 'require "yaml"; puts YAML.load_file("config/database.old.yml")["development"]["database"]'`
-}
-
 function fresh {
   psql fresh_development
 }
@@ -339,3 +337,4 @@ fi
 alias tls="tmux ls"
 alias tat="tmux a -t"
 alias tn="tmux new -s"
+alias docker-compose="nerdctl compose"
