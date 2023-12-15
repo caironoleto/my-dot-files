@@ -1,6 +1,6 @@
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-export VISUAL=emacs
-export EDITOR=emacs
+export VISUAL=nvim
+export EDITOR=nvim
 export LANG=pt_BR.UTF-8
 
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
