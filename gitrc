@@ -44,4 +44,4 @@ alias stop="git rebase --abort"
 alias skip="git rebase --skip"
 alias rename="gc --amend"
 alias show="git show"
-alias gbd='gco master && gpl && git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d'
+alias gbd="git fetch -p > /dev/null && git branch -vv | awk '/: gone]/{print \$1}' | xargs git branch -D"
