@@ -10,6 +10,7 @@
 --ignore-dir=.next/
 --ignore-dir=dist/
 --ignore-dir=_build
+--ignore-dir=.venv
 
 --ignore-file=ext:svg
 --ignore-file=is:erl_crash.dump

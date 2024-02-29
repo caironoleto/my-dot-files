@@ -31,3 +31,11 @@ fi
 
 # Export kerl options and avoid install erlang with java
 export KERL_CONFIGURE_OPTIONS="--without-javac --with-ssl=$(brew --prefix openssl@1.1)"
+
+
+if [ -d "$HOME/.poetry/bin" ] ; then
+  export PATH="$HOME/.poetry/bin:$PATH"
+fi
+
+# Disable venv PS1
+export VIRTUAL_ENV_DISABLE_PROMPT=true

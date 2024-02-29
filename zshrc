@@ -66,3 +66,14 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+#
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/cairo/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/cairo/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/cairo/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/cairo/Downloads/google-cloud-sdk/completion.zsh.inc'; fi

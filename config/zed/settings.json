@@ -18,7 +18,9 @@
   "vim_mode": true,
   "relative_line_numbers": true,
   "copilot": {
-    "disabled_globs": [".env"]
+    "disabled_globs": [
+      ".env"
+    ]
   },
   // git
   "git": {
@@ -34,6 +36,38 @@
     "font_size": null,
     "option_as_meta": false,
     "working_directory": "current_project_directory"
-  }
-  // add copilot keybindings
+  },
+  // LSP settings
+  // local elixir_ls_sh = "/opt/homebrew/opt/elixir-ls/libexec/language_server.sh"
+  // require'lspconfig'.elixirls.setup{
+  //   cmd = { elixir_ls_sh },
+  //   capabilities = capabilities,
+  //   on_attach = on_attach,
+  //   flags = {
+  //     debounce_text_changes = 150,
+  //   },
+  //   elixirLS = {
+  //     dialyzerEnabled = true,
+  //     fetchDeps = false,
+  //     enableTestLenses = true,
+  //     suggestSpecs = false,
+  //   },
+  // }
+  //
+  "lsp": {
+    "elixir": {
+      "initialization_options": {
+        "dialyzerEnabled": true,
+        "fetchDeps": false,
+        "enableTestLenses": true,
+        "suggestSpecs": true
+      }
+    },
+    "python": {
+      "typeCheckingMode": "off"
+    }
+  },
+  // formatter
+  "format_on_save": "on",
+  "formatter": "language_server"
 }

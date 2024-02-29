@@ -338,3 +338,8 @@ alias tls="tmux ls"
 alias tat="tmux a -t"
 alias tn="tmux new -s"
 alias docker-compose="nerdctl compose"
+
+# Python alias
+alias pr="poetry run"
+alias task="pr task"
+alias pip.outdated="pip --disable-pip-version-check list --outdated"
