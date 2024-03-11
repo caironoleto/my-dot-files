@@ -68,3 +68,4 @@ public/assets
 .pre-commit-config.yaml
 .github_token
 .openapikey
+.credentials
