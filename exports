@@ -1,4 +1,5 @@
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+export PATH=/opt/homebrew/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
+
 export VISUAL=nvim
 export EDITOR=nvim
 export LANG=pt_BR.UTF-8
@@ -19,7 +20,7 @@ if [ "$COLORTERM" = "xfce4-terminal"   ] ; then
   export TERM=xterm-256color
 fi
 
-export GEM_EDITOR=vim
+export GEM_EDITOR=nvim
 
 if [ -d "$HOME/platform-tools" ] ; then
   export PATH="$HOME/platform-tools:$PATH"
@@ -32,7 +33,6 @@ fi
 # Export kerl options and avoid install erlang with java
 export KERL_CONFIGURE_OPTIONS="--without-javac --with-ssl=$(brew --prefix openssl@1.1)"
 
-
 if [ -d "$HOME/.poetry/bin" ] ; then
   export PATH="$HOME/.poetry/bin:$PATH"
 fi
@@ -43,3 +43,15 @@ fi
 
 # Disable venv PS1
 export VIRTUAL_ENV_DISABLE_PROMPT=true
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export ERL_AFLAGS="-kernel shell_history enabled"
+
+# pnpm
+export PNPM_HOME="~/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

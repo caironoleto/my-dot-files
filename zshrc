@@ -46,34 +46,10 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 unsetopt correct_all
-export PATH=/opt/homebrew/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
+source ~/.exports
 source ~/.aliases
 source ~/.gitrc
-source ~/.exports
 source ~/.sources
 
 fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit && compinit -i
-
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-export ERL_AFLAGS="-kernel shell_history enabled"
-
-# pnpm
-export PNPM_HOME="/Users/cairo/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-#
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/cairo/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/cairo/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/cairo/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/cairo/Downloads/google-cloud-sdk/completion.zsh.inc'; fi

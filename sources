@@ -2,3 +2,8 @@
 if [ -d $HOME/.asdf ] ; then
   source $HOME/.asdf/asdf.sh
 fi
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+source ~/.google-cloud
+source ~/.python
