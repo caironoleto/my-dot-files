@@ -37,5 +37,9 @@ if [ -d "$HOME/.poetry/bin" ] ; then
   export PATH="$HOME/.poetry/bin:$PATH"
 fi
 
+if [ -d "/opt/homebrew/opt/postgresql@15/bin" ]; then
+  export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
+fi
+
 # Disable venv PS1
 export VIRTUAL_ENV_DISABLE_PROMPT=true
