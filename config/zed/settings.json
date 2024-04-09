@@ -7,74 +7,81 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-    "telemetry": {
-        "metrics": false
+  "telemetry": {
+    "metrics": false
+  },
+  "base_keymap": "VSCode",
+  "theme": "Gruvbox Dark Hard",
+  "buffer_font_size": 13,
+  "buffer_font_family": "FiraCode Nerd Font",
+  // vim mode
+  "vim_mode": true,
+  "relative_line_numbers": true,
+  "copilot": {
+    "disabled_globs": [".env"]
+  },
+  // git
+  "git": {
+    "git_gutter": "tracked_files"
+  },
+  "terminal": {
+    "alternate_scroll": "off",
+    "blinking": "terminal_controlled",
+    "copy_on_select": true,
+    "env": {},
+    "font_family": "FiraCode Nerd Font",
+    "option_as_meta": false,
+    "working_directory": "current_project_directory"
+  },
+  // LSP settings
+  // local elixir_ls_sh = "/opt/homebrew/opt/elixir-ls/libexec/language_server.sh"
+  // require'lspconfig'.elixirls.setup{
+  //   cmd = { elixir_ls_sh },
+  //   capabilities = capabilities,
+  //   on_attach = on_attach,
+  //   flags = {
+  //     debounce_text_changes = 150,
+  //   },
+  //   elixirLS = {
+  //     dialyzerEnabled = true,
+  //     fetchDeps = false,
+  //     enableTestLenses = true,
+  //     suggestSpecs = false,
+  //   },
+  // }
+  //
+  "lsp": {
+    "elixir": {
+      "initialization_options": {
+        "dialyzerEnabled": true,
+        "fetchDeps": false,
+        "enableTestLenses": true,
+        "suggestSpecs": true
+      }
     },
-    "base_keymap": "VSCode",
-    "theme": "Gruvbox Dark Hard",
-    "buffer_font_size": 13,
-    "buffer_font_family": "FiraCode Nerd Font",
-    // vim mode
-    "vim_mode": true,
-    "relative_line_numbers": true,
-    "copilot": {
-        "disabled_globs": [
-            ".env"
-        ]
-    },
-    // git
-    "git": {
-        "git_gutter": "tracked_files"
-    },
-    "terminal": {
-        "alternate_scroll": "off",
-        "blinking": "terminal_controlled",
-        "copy_on_select": true,
-        "env": {},
-        "font_family": null,
-        "font_features": null,
-        "font_size": null,
-        "option_as_meta": false,
-        "working_directory": "current_project_directory"
-    },
-    // LSP settings
-    // local elixir_ls_sh = "/opt/homebrew/opt/elixir-ls/libexec/language_server.sh"
-    // require'lspconfig'.elixirls.setup{
-    //   cmd = { elixir_ls_sh },
-    //   capabilities = capabilities,
-    //   on_attach = on_attach,
-    //   flags = {
-    //     debounce_text_changes = 150,
-    //   },
-    //   elixirLS = {
-    //     dialyzerEnabled = true,
-    //     fetchDeps = false,
-    //     enableTestLenses = true,
-    //     suggestSpecs = false,
-    //   },
-    // }
-    //
-    "lsp": {
-        "elixir": {
-            "initialization_options": {
-                "dialyzerEnabled": true,
-                "fetchDeps": false,
-                "enableTestLenses": true,
-                "suggestSpecs": true
-            }
-        },
-        "python": {
-            "typeCheckingMode": "off"
-        }
-    },
-    // formatter
-    "format_on_save": "on",
-    "formatter": "language_server",
-    // tab size
-    "tab_size": 4,
-    "language_overrides": {
-        "Ruby": {
-            "tab_size": 2
-        }
+    "python": {
+      "typeCheckingMode": "off"
     }
+  },
+  // formatter
+  "format_on_save": "on",
+  "formatter": "language_server",
+  // tab size
+  "tab_size": 4,
+  "language_overrides": {
+    "Ruby": {
+      "tab_size": 2
+    }
+    // ,
+    // "Python": {
+    //     "format_on_save": {
+    //         "external": {
+    //             "command": "bash",
+    //             "arguments": [
+    //                 ".zed/format.sh"
+    //             ]
+    //         }
+    //     }
+    // }
+  }
 }

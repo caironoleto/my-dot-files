@@ -37,6 +37,7 @@ if [ -d "$HOME/.poetry/bin" ] ; then
   export PATH="$HOME/.poetry/bin:$PATH"
 fi
 
+
 if [ -d "/opt/homebrew/opt/postgresql@15/bin" ]; then
   export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
 fi
@@ -55,3 +56,15 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+if [ -d "$HOME/.docker/bin" ] ; then
+  export PATH="$HOME/.docker/bin:$PATH"
+fi
+
+if [ -d "$HOME/code/personal/podsync/bin" ] ; then
+  export PATH="$HOME/code/personal/podsync/bin:$PATH"
+fi
+
+if [ -e "$HOME/.python-startup.py" ] ; then
+  export PYTHONSTARTUP=$HOME/.python-startup.py
+fi

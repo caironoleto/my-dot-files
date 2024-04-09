@@ -1,4 +1,5 @@
 *.bak
+
 *.class
 *.iml
 *.ipr
@@ -69,3 +70,4 @@ public/assets
 .github_token
 .openapikey
 .credentials
+local_files
