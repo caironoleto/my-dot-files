@@ -1,0 +1,10 @@
+#!/bin/bash
+
+root_path=$(echo $1 | cut -d'/' -f1-6)
+
+if [ -d "${root_path}/.venv" ]; then
+    source "${root_path}/.venv/bin/activate"
+fi
+
+black .
+isort .
