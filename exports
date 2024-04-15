@@ -4,13 +4,19 @@ export VISUAL=nvim
 export EDITOR=nvim
 export LANG=pt_BR.UTF-8
 
-export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-export PATH=$HOME/.exenv/bin:$PATH # Add exenv
-export PATH=$PATH:$HOME/.azk/bin
-export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
+export BREW_PREFIX=$(brew --prefix)
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+if [ -d "$HOME/.rvm/bin" ] ; then
+    export PATH="$HOME/.rvm/bin:$PATH"
+fi
+
+if [ -d "$HOME/.exenv/bin" ] ; then
+    export PATH=$HOME/.exenv/bin:$PATH # Add exenv
+fi
+
+if [ -d "$BREW_PREFIX/opt/grep/libexec/gnubin" ] ; then
+  export PATH="$BREW_PREFIX/opt/grep/libexec/gnubin:$PATH"
+fi
 
 bindkey -e
 bindkey '^[[1;5C' forward-word
@@ -31,15 +37,14 @@ if [ -x "$(command -v exenv)" ]; then
 fi
 
 # Export kerl options and avoid install erlang with java
-export KERL_CONFIGURE_OPTIONS="--without-javac --with-ssl=$(brew --prefix openssl@1.1)"
+export KERL_CONFIGURE_OPTIONS="--without-javac"
 
 if [ -d "$HOME/.poetry/bin" ] ; then
   export PATH="$HOME/.poetry/bin:$PATH"
 fi
 
-
-if [ -d "/opt/homebrew/opt/postgresql@15/bin" ]; then
-  export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
+if [ -d "${BREW_PREFIX}/opt/postgresql@15/bin" ]; then
+  export PATH="${BREW_PREFIX}/opt/postgresql@15/bin:$PATH"
 fi
 
 # Disable venv PS1
