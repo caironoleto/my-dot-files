@@ -21,16 +21,23 @@
 
 from __future__ import print_function
 
-import os.path
-import sys
 import atexit
+import os.path
 import readline
 import rlcompleter
+import sys
 from keyword import iskeyword
 
-
-ANSI_COLS = {"black": 30, "red": 31, "green": 32, "yellow": 33, "blue": 34,
-             "purple": 35, "cyan": 36, "white": 37}
+ANSI_COLS = {
+    "black": 30,
+    "red": 31,
+    "green": 32,
+    "yellow": 33,
+    "blue": 34,
+    "purple": 35,
+    "cyan": 36,
+    "white": 37,
+}
 
 
 class printable_function(object):
@@ -39,6 +46,7 @@ class printable_function(object):
     function's definition may be easily recalled.
 
     """
+
     def __init__(self, func, start, end):
         self.start = start
         self.end = end
@@ -71,6 +79,7 @@ class saved_function(object):
         print(bar)
 
     """
+
     def __init__(self, start):
         """The function start is taken as an argument.  The function end is
         figured out from the current history length
@@ -80,9 +89,7 @@ class saved_function(object):
         self.end = readline.get_current_history_length()
 
     def __call__(self, func):
-        """Return a printable_function instance of the function
-
-        """
+        """Return a printable_function instance of the function"""
         return printable_function(func, self.start, self.end)
 
 
@@ -118,8 +125,7 @@ class CustomPS1:
         """
         line_no = readline.get_current_history_length() + 1
         cur_prompt = self.prompt.format(line_no)
-        return "{0}".format(ansi_colorize(cur_prompt, "green", "bold",
-                                          prompt=prompt))
+        return "{0}".format(ansi_colorize(cur_prompt, "green", "bold", prompt=prompt))
 
     def __len__(self):
         """Return the length of the prompt without any escape sequences."""
@@ -139,8 +145,7 @@ class CustomPS2:
         """
         line_no = readline.get_current_history_length() + 1
         cur_prompt = self.prompt.format(line_no)
-        return "{0}".format(ansi_colorize(cur_prompt, "yellow", "bold",
-                                          prompt=prompt))
+        return "{0}".format(ansi_colorize(cur_prompt, "yellow", "bold", prompt=prompt))
 
     def __len__(self):
         """Return the length of the prompt without any escape sequences."""
@@ -171,21 +176,21 @@ def rl_autoindent():
         last_indent = int(last_indent_index / 4) + 1
     if len(last_input.strip()) > 1:
         if last_input.count("(") > last_input.count(")"):
-            indent = ''.join(["    " for n in range(last_indent + 2)])
+            indent = "".join(["    " for n in range(last_indent + 2)])
         elif last_input.count(")") > last_input.count("("):
-            indent = ''.join(["    " for n in range(last_indent - 1)])
+            indent = "".join(["    " for n in range(last_indent - 1)])
         elif last_input.count("[") > last_input.count("]"):
-            indent = ''.join(["    " for n in range(last_indent + 2)])
+            indent = "".join(["    " for n in range(last_indent + 2)])
         elif last_input.count("]") > last_input.count("["):
-            indent = ''.join(["    " for n in range(last_indent - 1)])
+            indent = "".join(["    " for n in range(last_indent - 1)])
         elif last_input.count("{") > last_input.count("}"):
-            indent = ''.join(["    " for n in range(last_indent + 2)])
+            indent = "".join(["    " for n in range(last_indent + 2)])
         elif last_input.count("}") > last_input.count("{"):
-            indent = ''.join(["    " for n in range(last_indent - 1)])
+            indent = "".join(["    " for n in range(last_indent - 1)])
         elif last_input[-1] == ":":
-            indent = ''.join(["    " for n in range(last_indent + 1)])
+            indent = "".join(["    " for n in range(last_indent + 1)])
         else:
-            indent = ''.join(["    " for n in range(last_indent)])
+            indent = "".join(["    " for n in range(last_indent)])
     readline.insert_text(indent)
 
 
@@ -197,12 +202,12 @@ def comp_disp_matches(substitution, matches, longest_match_length):
     hist_len = readline.get_current_history_length()
     last_input = readline.get_history_item(hist_len)
     for n, m in enumerate(matches):
-        (mod, d, w) = m.rpartition('.')
-        w_strip = w.strip('(')
+        (mod, d, w) = m.rpartition(".")
+        w_strip = w.strip("(")
         # Parent modules: bold yellow, with the children highlighted
         # according to their syntactic role
         if mod != "":
-            mod_str = "".join([ansi_colorize(mod, "yellow", "bold"), '.'])
+            mod_str = "".join([ansi_colorize(mod, "yellow", "bold"), "."])
         else:
             mod_str = ""
         # Function: bright cyan
@@ -229,22 +234,26 @@ def comp_disp_matches(substitution, matches, longest_match_length):
         # Get the total length of escape sequences
         col_len = (len(mod_str) + len(w_str)) - (len(mod) + len(w))
         # Write columns with widths set by the longest match length
-        sys.stdout.write("{0:{1}} ".format("{0}{1}".format(mod_str, w_str),
-                                           longest_match_length + col_len))
+        sys.stdout.write(
+            "{0:{1}} ".format(
+                "{0}{1}".format(mod_str, w_str), longest_match_length + col_len
+            )
+        )
     # Redisplay the prompt
     if last_input.strip()[-1] in ["(", "[", "{", ":"]:
-        sys.stdout.write("\n{0}{1}".format(sys.ps2.__str__(prompt=False),
-                                           readline.get_line_buffer()))
+        sys.stdout.write(
+            "\n{0}{1}".format(sys.ps2.__str__(prompt=False), readline.get_line_buffer())
+        )
     else:
-        sys.stdout.write("\n{0}{1}".format(sys.ps1.__str__(prompt=False),
-                                           readline.get_line_buffer()))
+        sys.stdout.write(
+            "\n{0}{1}".format(sys.ps1.__str__(prompt=False), readline.get_line_buffer())
+        )
 
 
 def setup_readline():
     """Initialize the readline module."""
-    histpath = os.path.join(os.path.expanduser("~"), ".local", "share",
-                            "python")
-    if sys.version[0] == '2':
+    histpath = os.path.join(os.path.expanduser("~"), ".local", "share", "python")
+    if sys.version[0] == "2":
         histfile = os.path.join(histpath, "py2hist")
     else:
         histfile = os.path.join(histpath, "py3hist")
