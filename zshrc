@@ -53,3 +53,14 @@ source ~/.sources
 
 fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit && compinit -i
+source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
+
+cd() {
+    builtin cd "$@" && activate_venv
+}
+
+activate_venv() {
+    if [ -d .venv ] && [ -f .venv/bin/activate ]; then
+        source .venv/bin/activate
+    fi
+}
