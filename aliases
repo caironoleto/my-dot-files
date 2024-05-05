@@ -340,7 +340,10 @@ alias tn="tmux new -s"
 alias docker-compose="nerdctl compose"
 
 # Python alias
-alias pr="poetry run"
 alias task="pr task"
 alias pip.outdated="pip --disable-pip-version-check list --outdated"
 alias env.recreate="rm -rf .venv && python -m venv .venv"
+
+function pt {
+  py.test -d --tx "`nproc`*popen//python=python" $1
+}
