@@ -3,8 +3,6 @@ if [ -d "$HOME/.google-cloud-sdk" ]; then
   source "$HOME/.google-cloud-sdk/path.zsh.inc"
   # enable zsh c.etion for gcloud.
   source "$HOME/.google-cloud-sdk/completion.zsh.inc"
-else
-  echo "error: expected to find Google Cloud SDK in ~/bin/google-cloud-sdk"
 fi
 
 # The next line updates PATH for the Google Cloud SDK.
