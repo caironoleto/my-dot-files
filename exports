@@ -47,6 +47,10 @@ if [ -d "${BREW_PREFIX}/opt/postgresql@15/bin" ]; then
   export PATH="${BREW_PREFIX}/opt/postgresql@15/bin:$PATH"
 fi
 
+if [ -d "${BREW_PREFIX}/Cellar/postgresql@15/15.6_1/bin" ]; then
+  export PATH="${BREW_PREFIX}/Cellar/postgresql@15/15.6_1/bin:$PATH"
+fi
+
 # Disable venv PS1
 export VIRTUAL_ENV_DISABLE_PROMPT=true
 
@@ -70,6 +74,14 @@ if [ -d "$HOME/code/personal/podsync/bin" ] ; then
   export PATH="$HOME/code/personal/podsync/bin:$PATH"
 fi
 
+if [ -d "$HOME/.google-cloud-proxy/bin" ]; then
+  export PATH="$HOME/.google-cloud-proxy/bin:$PATH"
+fi
+
 if [ -e "$HOME/.python-startup.py" ] ; then
   export PYTHONSTARTUP=$HOME/.python-startup.py
+fi
+
+if [ -e "$HOME/.secrets" ] ; then
+  source "$HOME/.secrets"
 fi
