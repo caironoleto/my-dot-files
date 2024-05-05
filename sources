@@ -7,3 +7,7 @@ fi
 
 source ~/.google-cloud
 source ~/.python
+
+if [ -d $HOME/.cargo/ ] ; then
+  source $HOME/.cargo/env
+fi
