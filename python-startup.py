@@ -23,7 +23,10 @@ from __future__ import print_function
 
 import atexit
 import os.path
-import readline
+try:
+    import gnureadline as readline
+except ImportError:
+    import readline
 import rlcompleter
 import sys
 from keyword import iskeyword
