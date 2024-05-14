@@ -882,6 +882,7 @@ bindings = [
   { key = "w", mods = "Control", chars = ":Bdelete!\r" },
   { key = "l", mods = "Control", chars = ":ChatGPT\r" },
   { key = "b", mods = "Control", chars = ":lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})\r" },
+  { key = "f", mods = "Control", chars = ":lua require('telescope').extensions.live_grep_args.live_grep_args()\r" },
   { key = "[", mods = "Control|Alt", chars = ":bp\r"},
   { key = "]", mods = "Control|Alt", chars = ":bn\r"},
   { key = "V",        mods = "Control|Shift", action = "Paste"            },

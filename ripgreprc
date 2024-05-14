@@ -1,0 +1,22 @@
+# Ignore some files
+--glob=!log/
+--glob=!node_modules/
+--glob=!tmp/
+--glob=!coverage/
+--glob=!shifts/
+--glob=!deps/
+--glob=!.elixir_ls/
+--glob=!.next/
+--glob=!dist/
+--glob=!_build
+--glob=!.venv
+--glob=!.svg
+--glob=!erl_crash.dump
+--glob=!.pyc
+--glob=!Makefile
+
+--type-add
+css:*.{scss}*
+
+--type-add
+ruby:*.{haml,rselm,feature,ru,lock}*
