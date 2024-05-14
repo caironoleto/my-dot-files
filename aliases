@@ -110,7 +110,7 @@ function p() {
   then
     sites_directory=$HOME/sites
   else
-    sites_directory=$HOME/Sites
+    sites_directory=$HOME/code
   fi
   case "$1" in
     "--help")
