@@ -22,7 +22,9 @@
 # "~/.config/alacritty/keybindings.toml",
 # ]
 
-import = []
+import = [
+  "~/.config/alacritty/themes/themes/catppuccin_mocha.toml"
+]
 
 # live_config_reload = true | false
 # Live config reload (changes require restart)
@@ -173,7 +175,7 @@ title = "Alacritty"
 dynamic_title = true
 decorations_theme_variant = "None"
 decorations = "Full"
-opacity = 0.9
+opacity = 1
 blur = true
 
 
@@ -885,6 +887,7 @@ bindings = [
   { key = "f", mods = "Control", chars = ":lua require('telescope').extensions.live_grep_args.live_grep_args()\r" },
   { key = "[", mods = "Control|Alt", chars = ":bp\r"},
   { key = "]", mods = "Control|Alt", chars = ":bn\r"},
+  { key = "z", mods = "Control|Shift", chars = "fg\r"},
   { key = "V",        mods = "Control|Shift", action = "Paste"            },
   { key = "C",        mods = "Control|Shift", action = "Copy"             },
   { key = "Insert",   mods = "Shift",         action = "PasteSelection"   },
@@ -893,7 +896,6 @@ bindings = [
   { key = "Minus",    mods = "Control",       action = "DecreaseFontSize" },
   { key = "N",        mods = "Control|Shift",       action = "CreateNewWindow" },
 ]
-
 
 #[keyboard]
 
