@@ -1,5 +1,7 @@
-alias ls='ls -FG'
+alias ls='eza -lh --group-directories-first --icons'
 alias ll='ls -lah'
+alias lt='eza --tree --level=2 --long --icons --git'
+alias lta='lt -a'
 alias ..='cd ..;'
 alias ...='.. ..'
 alias g='grep -i'
@@ -32,7 +34,6 @@ alias profileme="history | awk '{print \$2}' | awk 'BEGIN{FS=\"|\"}{print \$1}' 
 alias log='tail -f -0 ./log/*.log'
 alias tailf="tail -f"
 alias asp='autospec'
-alias ss='script/server'
 alias sc='ruby ./script/console'
 alias dot='vim ~/sites/my-apps/my-dot-files'
 alias cdm='cap deploy deploy:migrate'
@@ -245,7 +246,6 @@ function mobile {
 }
 
 alias sdb='cd ~/Sites/Enjoei-databases && fsdev'
-alias ls='ls -G'
 alias pubkey='cat ~/.ssh/*.pub | pbcopy && echo "Keys copied to clipboard"'
 alias m='mate .'
 alias et="m"
