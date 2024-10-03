@@ -1,4 +1,4 @@
-export PATH=/opt/homebrew/bin:/home/linuxbrew/.linuxbrew/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
+export PATH=/opt/homebrew/bin:/home/linuxbrew/.linuxbrew/sbin:/home/linuxbrew/.linuxbrew/bin:$PATH
 
 export VISUAL=nvim
 export EDITOR=nvim
@@ -84,4 +84,12 @@ fi
 
 if [ -e "$HOME/.secrets" ] ; then
   source "$HOME/.secrets"
+fi
+
+if [ -d "$HOME/.zen-browser/zen" ] ; then
+  export PATH="$HOME/.zen-browser/zen:$PATH"
+fi
+
+if [ -d "/home/linuxbrew/.linuxbrew/share" ] ; then
+  export XDG_DATA_DIRS=/home/linuxbrew/.linuxbrew/share:$XDG_DATA_DIRS
 fi
