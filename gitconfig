@@ -32,3 +32,5 @@
 	defaultBranch = main
 [color "branch"]
 	upstream = yellow
+[pull]
+	rebase = true
