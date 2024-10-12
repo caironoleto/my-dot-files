@@ -123,7 +123,7 @@ function p() {
     "--list")
       for f in `ls -1 $sites_directory`; do
         echo "Projects in $f:"
-        for fin in `ls -1l $sites_directory/$f | grep "^d" | awk '{print $9}'`; do
+        for fin in `ls -1l $sites_directory/$f | grep "^d" | awk '{print $7}'`; do
           echo "  $fin"
         done
       done
@@ -133,6 +133,7 @@ function p() {
           if [ -d $sites_directory/$f/$1 ]; then
             echo "Project found in $f"
             cd $sites_directory/$f/$1
+            nvim
             break
           else
             echo "Project not found in $f"
