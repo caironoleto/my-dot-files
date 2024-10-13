@@ -6,3 +6,7 @@ source ~/.python
 if [ -d $HOME/.cargo/ ] ; then
   source $HOME/.cargo/env
 fi
+
+if [ -e ${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc ] ; then
+  source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
+fi

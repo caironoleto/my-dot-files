@@ -4,7 +4,9 @@ export VISUAL=nvim
 export EDITOR=nvim
 export LANG=pt_BR.UTF-8
 
-export BREW_PREFIX=$(brew --prefix)
+if [ type foobar &> /dev/null ] ; then
+  export BREW_PREFIX=$(brew --prefix)
+fi
 
 if [ -d "$HOME/.rvm/bin" ] ; then
     export PATH="$HOME/.rvm/bin:$PATH"
