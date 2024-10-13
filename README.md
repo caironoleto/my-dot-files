@@ -23,7 +23,7 @@ Setup tmux keys in iTerm2, open preferences:
 Now, install my aewsome dot files!
 
 ```shell
-git clone https://gitlab.com/caironoleto/my-dot-files.git ~/.my-dot-files
+git clone git@github.com:caironoleto/my-dot-files.git ~/.my-dot-files
 cd ~/.my-dot-files
 ruby install.rb
 ```
