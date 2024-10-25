@@ -92,6 +92,10 @@ if [ -d "$HOME/.zen-browser/zen" ] ; then
   export PATH="$HOME/.zen-browser/zen:$PATH"
 fi
 
+if [ -d "$HOME/.pulumi/bin" ] ; then
+  export PATH="$HOME/.pulumi/bin:$PATH"
+fi
+
 if [ -d "/home/linuxbrew/.linuxbrew/share" ] ; then
   export XDG_DATA_DIRS=/home/linuxbrew/.linuxbrew/share:$XDG_DATA_DIRS
 fi
