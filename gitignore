@@ -29,7 +29,6 @@
 .svn
 .next
 ._*
-bin/*
 build
 build/*
 derby.log
@@ -48,7 +47,6 @@ tmp/**/*
 *.dump
 .env
 .ruby-gemset
-.ruby-version
 *.sql
 *.zip
 .powrc
