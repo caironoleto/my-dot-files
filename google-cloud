@@ -14,3 +14,12 @@ fi
 if [ -f "$HOME/.google-cloud-sdk/google-cloud-sdk/completion.zsh.inc" ]; then
   source "$HOME/.google-cloud-sdk/google-cloud-sdk/completion.zsh.inc"
 fi
+
+# Add support to google cloud from arch package
+if [ -f "$HOME/.cache/pacaur/google-cloud-cli/pkg/google-cloud-cli/opt/google-cloud-cli/completion.zsh.inc" ]; then
+  source "$HOME/.cache/pacaur/google-cloud-cli/pkg/google-cloud-cli/opt/google-cloud-cli/completion.zsh.inc"
+fi
+
+if [ -f "$HOME/.cache/pacaur/google-cloud-cli/pkg/google-cloud-cli/opt/google-cloud-cli/path.zsh.inc" ]; then
+  source"$HOME/.cache/pacaur/google-cloud-cli/pkg/google-cloud-cli/opt/google-cloud-cli/path.zsh.inc"
+fi
