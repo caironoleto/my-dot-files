@@ -25,7 +25,7 @@ alias dbc='cat config/database.yml'
 alias c='clear' # shortcut to clear your terminal
 
 alias sprof='source ~/.zshrc'
-alias sinstall='ruby ~/Sites/dot-files/install.rb && sprof'
+alias sinstall='ruby ~/.my-dot-files/install.rb && sprof'
 
 # useful command to find what you should be aliasing:
 alias profileme="history | awk '{print \$2}' | awk 'BEGIN{FS=\"|\"}{print \$1}' | sort | uniq -c | sort -n | tail -n 20 | sort -nr"
@@ -348,3 +348,7 @@ alias env.recreate="rm -rf .venv && python -m venv .venv"
 function pt {
   py.test -d --tx "`nproc`*popen//python=python" $1
 }
+
+alias pac.clear="pacaur -Qqtd | pacaur -Rns -"
+alias pac.update="pacaur -Syu"
+alias bc="better-commits"
