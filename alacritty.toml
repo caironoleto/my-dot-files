@@ -238,8 +238,8 @@ multiplier = 3
 # Default: true
 
 [font]
-normal = { family = "FiraCode Nerd Font", style = "Regular" }
-size = 10
+normal = { family = "Cascadia Code", style = "Medium" }
+size = 11
 builtin_box_drawing = true
 
 # COLORS
