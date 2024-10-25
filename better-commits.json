@@ -1,5 +1,5 @@
 {
-    "check_status": true,
+    "check_status": false,
     "commit_type": {
         "enable": true,
         "initial_value": "feat",
@@ -78,7 +78,7 @@
         ]
     },
     "commit_scope": {
-        "enable": true,
+        "enable": false,
         "custom_scope": false,
         "max_items": 20,
         "initial_value": "app",
@@ -122,7 +122,7 @@
         "required": false
     },
     "commit_footer": {
-        "enable": true,
+        "enable": false,
         "initial_value": [],
         "options": [
             "closes",
@@ -136,7 +136,7 @@
         "add_exclamation_to_title": false
     },
     "confirm_with_editor": false,
-    "confirm_commit": true,
+    "confirm_commit": false,
     "print_commit_output": true,
     "branch_pre_commands": [],
     "branch_post_commands": [],
