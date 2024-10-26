@@ -7,7 +7,8 @@ function gd {
 }
 alias ga='git add'
 alias gcl='git config --list'
-alias gc='git commit --verbose'
+# alias gc='git commit --verbose'
+alias gc='bc'
 alias gca='git commit -v -a -m'
 alias gb='git branch -vvv'
 alias gba='git branch -a'
