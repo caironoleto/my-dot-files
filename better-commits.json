@@ -107,7 +107,7 @@
     },
     "check_ticket": {
         "infer_ticket": true,
-        "confirm_ticket": true,
+        "confirm_ticket": false,
         "add_to_title": true,
         "append_hashtag": false,
         "prepend_hashtag": "Never",
