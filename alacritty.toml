@@ -22,6 +22,7 @@
 # "~/.config/alacritty/keybindings.toml",
 # ]
 
+[general]
 import = [
   "~/.config/alacritty/themes/themes/catppuccin_mocha.toml"
 ]
