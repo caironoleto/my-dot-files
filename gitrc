@@ -2,9 +2,7 @@ alias gs='git stash'
 alias gsp='git stash pop'
 alias gl='git pull'
 alias gp='git push'
-function gd {
-  git diff --color $1 | diff-so-fancy | less
-}
+alias gd='git diff --color $1 | diff-so-fancy | less'
 alias ga='git add'
 alias gcl='git config --list'
 # alias gc='git commit --verbose'
@@ -43,6 +41,7 @@ alias gitrc="cat ~/.gitrc"
 alias stash="git add . && git commit -m 'Stash'"
 alias stop="git rebase --abort"
 alias skip="git rebase --skip"
-alias rename="gc --amend"
+alias rename="git commit --amend"
+alias gam="rename --no-edit"
 alias show="git show"
 alias gbd="git fetch -p > /dev/null && git branch -vv | awk '/: gone]/{print \$1}' | xargs git branch -D"
