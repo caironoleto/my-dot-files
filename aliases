@@ -352,3 +352,4 @@ function pt {
 alias pac.clear="pacaur -Qqtd | pacaur -Rns -"
 alias pac.update="pacaur -Syu"
 alias bc="better-commits"
+alias tws="tw summary :quarter :ids"
