@@ -22,8 +22,7 @@
 # "~/.config/alacritty/keybindings.toml",
 # ]
 
-[general]
-import = [
+general.import = [
   "~/.config/alacritty/themes/themes/catppuccin_mocha.toml"
 ]
 
@@ -31,7 +30,7 @@ import = [
 # Live config reload (changes require restart)
 # Default: true
 
-live_config_reload = true
+general.live_config_reload = true
 
 # ipc_socket = true | false # (unix only)
 # Offer IPC using alacritty msg
@@ -58,7 +57,7 @@ live_config_reload = true
 # program = "/bin/zsh"
 # args = ["-l"]
 
-[shell]
+[terminal.shell]
 program = "/usr/bin/zsh"
 args = ["-l"]
 
