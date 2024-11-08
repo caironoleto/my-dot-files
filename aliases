@@ -349,7 +349,7 @@ function pt {
   py.test -d --tx "`nproc`*popen//python=python" $1
 }
 
-alias pac.clear="pacaur -Qqtd | pacaur -Rns -"
-alias pac.update="pacaur -Syu"
+alias pac.clear="yay -Qqtd | yay -Rns -"
+alias pac.update="yay -Syu"
 alias bc="better-commits"
 alias tws="tw summary :quarter :ids"
