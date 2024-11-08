@@ -13,6 +13,7 @@
 --ignore-dir=.venv
 
 --ignore-file=ext:svg
+--ignore-file=ext:cache
 --ignore-file=is:erl_crash.dump
 
 #make sure ack knows how to search common filetypes used in rails projects
