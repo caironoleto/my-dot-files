@@ -1,22 +1,38 @@
-# Ignore some files
---glob=!log/
---glob=!node_modules/
---glob=!tmp/
---glob=!coverage/
---glob=!shifts/
---glob=!deps/
---glob=!.elixir_ls/
---glob=!.next/
---glob=!dist/
---glob=!_build
---glob=!.venv
---glob=!.svg
---glob=!erl_crash.dump
---glob=!.pyc
---glob=!Makefile
+# Don't let ripgrep vomit really long lines to my terminal, and show a preview.
+--max-columns=150
+--max-columns-preview
+
+--hidden
 
 --type-add
 css:*.{scss}*
 
 --type-add
 ruby:*.{haml,rselm,feature,ru,lock}*
+
+# Set the colors.
+--colors=line:none
+--colors=line:style:bold
+
+# Because who cares about case!?
+--smart-case
+
+# Ignore some files
+--glob=!vendor/*
+--glob=!.next/*
+--glob=!bin/*
+--glob=!coverage/*
+--glob=!deps/*
+--glob=!dist/*
+--glob=!log/*
+--glob=!node_modules/*
+--glob=!public/*
+--glob=!shifts/*
+--glob=!tmp/*
+--glob=!vendor/*
+--glob=!.git/*
+--glob=!.pyc
+--glob=!.svg
+--glob=!.venv
+--glob=!_build
+--glob=!erl_crash.dump

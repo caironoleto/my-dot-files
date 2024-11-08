@@ -99,3 +99,5 @@ fi
 if [ -d "/home/linuxbrew/.linuxbrew/share" ] ; then
   export XDG_DATA_DIRS=/home/linuxbrew/.linuxbrew/share:$XDG_DATA_DIRS
 fi
+
+export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
