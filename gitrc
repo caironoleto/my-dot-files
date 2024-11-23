@@ -46,3 +46,4 @@ alias rename="git commit --amend"
 alias gam="rename --no-edit"
 alias show="git show"
 alias gbd="git fetch -p > /dev/null && git branch -vv | awk '/: gone]/{print \$1}' | xargs git branch -D"
+alias redate='GIT_COMMITTER_DATE="$(date)" git commit --amend --no-edit --date "$(date)"'
