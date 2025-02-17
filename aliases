@@ -133,7 +133,7 @@ function p() {
           if [ -d $sites_directory/$f/$1 ]; then
             echo "Project found in $f"
             cd $sites_directory/$f/$1
-            nvim
+            # nvim
             break
           else
             echo "Project not found in $f"
@@ -309,26 +309,6 @@ function feature {
   git flow feature start $*
 }
 
-alias codeclimate="docker run \
-  --interactive --tty --rm \
-  --env CODECLIMATE_CODE="$PWD" \
-  --volume "$PWD":/code \
-  --volume /var/run/docker.sock:/var/run/docker.sock \
-  --volume /tmp/cc:/tmp/cc \
-  codeclimate/codeclimate"
-
-function update_js {
-  p saraiva
-  cd apps/react && yarn install
-  p saraiva
-  cd apps/bo && yarn install
-}
-
-function ojs {
-  p saraiva
-  cd apps/$1/lib/$1/web/static/js/app
-}
-
 if [ -f ~/.kubectl-alias ]
 then
   source ~/.kubectl-alias
@@ -338,7 +318,7 @@ fi
 alias tls="tmux ls"
 alias tat="tmux a -t"
 alias tn="tmux new -s"
-alias docker-compose="nerdctl compose"
+# alias docker-compose="nerdctl compose"
 
 # Python alias
 alias task="pr task"
@@ -352,4 +332,10 @@ function pt {
 alias pac.clear="yay -Qqtd | yay -Rns -"
 alias pac.update="yay -Syu"
 alias bc="better-commits"
-alias tws="tw summary :quarter :ids"
+alias tws="tw summary :week :ids"
+alias docker-compose="docker compose"
+
+if [ -f ~/.private-alias ]
+then
+  source ~/.private-alias
+fi
