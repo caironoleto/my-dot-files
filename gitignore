@@ -16,6 +16,7 @@
 *.ser
 *.swp
 *.xcodeproj/*.tm_build_errors
+*.keep
 *~
 *~.nib
 .classpath
@@ -70,3 +71,4 @@ public/assets
 .credentials
 local_files
 Aptfile
+dumps

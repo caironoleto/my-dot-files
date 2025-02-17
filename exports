@@ -100,4 +100,18 @@ if [ -d "/home/linuxbrew/.linuxbrew/share" ] ; then
   export XDG_DATA_DIRS=/home/linuxbrew/.linuxbrew/share:$XDG_DATA_DIRS
 fi
 
+if [ -d "$HOME/.local/bin" ] ; then
+  export PATH="$HOME/.local/bin:$PATH"
+  export CNI_PATH=~/.local/libexec/cni
+fi
+
+if [ -d "$HOME/.local/libexec" ] ; then
+  export CNI_PATH=~/.local/libexec/cni
+fi
+
+export PATH="$HOME/.local/nerdctl/extras/rootless:$PATH"
+
+export DOCKER_BUILDKIT=1
+export COMPOSE_DOCKER_CLI_BUILD=1
+
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
