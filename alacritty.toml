@@ -888,7 +888,6 @@ hide_when_typing = false
 bindings = [
   { key = "p", mods = "Control", chars = ":Telescope find_files\r" },
   { key = "w", mods = "Control", chars = ":Bdelete!\r" },
-  { key = "l", mods = "Control", chars = ":ChatGPT\r" },
   { key = "b", mods = "Control", chars = ":lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})\r" },
   { key = "f", mods = "Control", chars = ":lua require('telescope').extensions.live_grep_args.live_grep_args()\r" },
   { key = "[", mods = "Control|Alt", chars = ":bp\r"},
@@ -900,7 +899,7 @@ bindings = [
   { key = "Key0",     mods = "Control",       action = "ResetFontSize"    },
   { key = "Equals",   mods = "Control",       action = "IncreaseFontSize" },
   { key = "Minus",    mods = "Control",       action = "DecreaseFontSize" },
-  { key = "N",        mods = "Control|Shift",       action = "CreateNewWindow" },
+  { key = "N",        mods = "Super|Shift",       action = "CreateNewWindow" },
 ]
 
 #[keyboard]

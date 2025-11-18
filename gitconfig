@@ -10,7 +10,6 @@
 	default = matching
 [alias]
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-
   # `git log` with patches shown with difftastic.
   dl = -c diff.external=difft log -p --ext-diff
   # Show the most recent commit with difftastic.
