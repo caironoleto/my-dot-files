@@ -72,3 +72,6 @@ public/assets
 local_files
 Aptfile
 dumps
+.reports
+.claude/docs
+k8s

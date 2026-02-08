@@ -13,7 +13,7 @@ alias gca='git commit -v -a -m'
 alias gch='git apply --check'
 alias gcl='git config --list'
 alias gco='git checkout'
-alias gd='git dft'
+alias gd='git diff'
 alias gdc='gd --cached'
 alias gfp='git format-patch -1'
 alias gi='git init'
@@ -35,7 +35,7 @@ alias grh="git reset HEAD"
 alias grj='git apply --reject --whitespace=fix'
 alias grm="git rm -rf"
 alias grs="git rebase --skip"
-alias gs='git ds'
+alias gs='git show'
 alias gst='git stash'
 alias gstp='git stash pop'
 alias gt='git tag'

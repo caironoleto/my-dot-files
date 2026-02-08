@@ -1,6 +1,6 @@
 # from http://www.pixelbeat.org/settings/.inputrc
- 
- 
+
+
 # By default up/down are bound to previous-history
 # and next-history respectively. The following does the
 # same but gives the extra functionality where if you
@@ -16,17 +16,17 @@ set convert-meta off
 "\e[B": history-search-forward
 "\e[A": history-search-backward
 "\e[1;5C": forward-word"
-"\e[1;5D": backward-word"
- 
+"\e[1;6D": backward-word"
+
 $if Bash
   # F10 toggles mc on and off
   # Note Ctrl-o toggles panes on and off in mc
   "\e[21~": "mc\C-M"
- 
+
   #do history expansion when space entered
   Space: magic-space
 $endif
- 
+
 # Include system wide settings which are ignored
 # by default if one has their own .inputrc
 $include /etc/inputrc

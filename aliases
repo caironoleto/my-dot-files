@@ -318,7 +318,6 @@ fi
 alias tls="tmux ls"
 alias tat="tmux a -t"
 alias tn="tmux new -s"
-# alias docker-compose="nerdctl compose"
 
 # Python alias
 alias task="pr task"
@@ -333,7 +332,13 @@ alias pac.clear="yay -Qqtd | yay -Rns -"
 alias pac.update="yay -Syu"
 alias bc="better-commits"
 alias tws="tw summary :week :ids"
+
+# Docker
 alias docker-compose="docker compose"
+unalias dcstop 2>/dev/null
+dcstop() {
+  docker ps -q | xargs -r -n1 docker stop
+}
 
 if [ -f ~/.private-alias ]
 then

@@ -13,9 +13,9 @@
   # `git log` with patches shown with difftastic.
   dl = -c diff.external=difft log -p --ext-diff
   # Show the most recent commit with difftastic.
-  ds = -c diff.external=difft show --ext-diff
+  # ds = -c diff.external=difft show --ext-diff
   # `git diff` with difftastic.
-  dft = -c diff.external=difft diff
+  # dft = -c diff.external=difft diff
 [include]
   path = ~/.my_heroku_config
 [heroku]
@@ -30,8 +30,8 @@
 	oldHighlight = red bold 52
 	newNormal = green bold
 	newHighlight = green bold 22
-[diff]
-  external = difft
+#[diff]
+#  external = difft
 [commit]
 	template = ~/.gitmessage
 [fetch]
@@ -50,3 +50,5 @@
 	old = red bold
 	new = green bold
 	whitespace = red reverse
+[safe]
+	directory = /codewars

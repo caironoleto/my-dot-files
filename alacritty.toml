@@ -53,14 +53,12 @@ general.live_config_reload = true
 
 # Example:
 
-# [shell]
-# program = "/bin/zsh"
-# args = ["-l"]
-
 [terminal.shell]
 program = "/usr/bin/zsh"
 args = ["-l"]
 
+# [terminal.shell]
+# program = "/usr/bin/tmux"
 
 # ENV
 # All key-value pairs in the [env] section will be added as environment variables for any process spawned by Alacritty, including its shell. Some entries may override variables set by alacritty itself.
@@ -886,20 +884,23 @@ hide_when_typing = false
 
 [keyboard]
 bindings = [
-  { key = "p", mods = "Control", chars = ":Telescope find_files\r" },
-  { key = "w", mods = "Control", chars = ":Bdelete!\r" },
-  { key = "b", mods = "Control", chars = ":lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})\r" },
-  { key = "f", mods = "Control", chars = ":lua require('telescope').extensions.live_grep_args.live_grep_args()\r" },
-  { key = "[", mods = "Control|Alt", chars = ":bp\r"},
-  { key = "]", mods = "Control|Alt", chars = ":bn\r"},
-  { key = "z", mods = "Control|Shift", chars = "fg\r"},
-  { key = "V",        mods = "Control|Shift", action = "Paste"            },
-  { key = "C",        mods = "Control|Shift", action = "Copy"             },
-  { key = "Insert",   mods = "Shift",         action = "PasteSelection"   },
-  { key = "Key0",     mods = "Control",       action = "ResetFontSize"    },
-  { key = "Equals",   mods = "Control",       action = "IncreaseFontSize" },
-  { key = "Minus",    mods = "Control",       action = "DecreaseFontSize" },
-  { key = "N",        mods = "Super|Shift",       action = "CreateNewWindow" },
+  # { key = "p",        mods = "Control",       chars = ":Telescope find_files\r"  },
+  { key = "w",        mods = "Control",       chars = ":Bdelete!\r"                },
+  #{ key = "{",        mods = "Control|Shift", chars = ":bp\r"                      },
+  #{ key = "}",        mods = "Control|Shift", chars = ":bn\r"                      },
+  { key = "z",        mods = "Control|Shift", chars = "fg\r"                       },
+  { key = "f",        mods = "Control|Shift", action = "ReceiveChar"               },
+  { key = "b",        mods = "Control|Shift", action = "ReceiveChar"               },
+  { key = "V",        mods = "Control|Shift", action = "Paste"                     },
+  { key = "C",        mods = "Control|Shift", action = "Copy"                      },
+  { key = "Insert",   mods = "Shift",         action = "PasteSelection"            },
+  { key = "Key0",     mods = "Control",       action = "ResetFontSize"             },
+  { key = "Equals",   mods = "Control",       action = "IncreaseFontSize"          },
+  { key = "Minus",    mods = "Control",       action = "DecreaseFontSize"          },
+  { key = "N",        mods = "Super|Shift",   action = "CreateNewWindow"           },
+  { key = "Return",   mods = "Shift", chars = "\u001b[200~\n\u001b[201~"           },
+  #{ key = "Left",     mods = "Control|Shift", chars = "\\^[[1;6D"                 },
+  #{ key = "Right",    mods = "Control|Shift", chars = "\\x1BF"                    },
 ]
 
 #[keyboard]

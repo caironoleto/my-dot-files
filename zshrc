@@ -64,3 +64,5 @@ activate_venv() {
         source .venv/bin/activate
     fi
 }
+bindkey "^[[1;6D" backward-word   # Alt+Left
+bindkey "^[[1;6C" forward-word    # Alt+Right
