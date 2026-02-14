@@ -6,6 +6,7 @@
 [core]
 	excludesfile = ~/.gitignore
 	editor = nvim
+	pager = delta
 [push]
 	default = matching
 [alias]
@@ -52,3 +53,10 @@
 	whitespace = red reverse
 [safe]
 	directory = /codewars
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+  line-numbers = true
+[merge]
+	conflictStyle = zdiff3

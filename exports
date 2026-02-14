@@ -56,7 +56,6 @@ fi
 # Disable venv PS1
 export VIRTUAL_ENV_DISABLE_PROMPT=true
 
-export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export ERL_AFLAGS="-kernel shell_history enabled"
 
@@ -123,3 +122,6 @@ export DOCKER_BUILDKIT=1
 export COMPOSE_DOCKER_CLI_BUILD=1
 
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
+PODMAN_SOCK="/run/user/$(id -u)/podman/podman.sock"
+[ -S "$PODMAN_SOCK" ] && export DOCKER_HOST="unix://$PODMAN_SOCK"
+export XCOMPOSEFILE=/usr/share/X11/locale/pt_BR.UTF-8/Compose

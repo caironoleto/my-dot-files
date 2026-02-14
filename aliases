@@ -328,8 +328,6 @@ function pt {
   py.test -d --tx "`nproc`*popen//python=python" $1
 }
 
-alias pac.clear="yay -Qqtd | yay -Rns -"
-alias pac.update="yay -Syu"
 alias bc="better-commits"
 alias tws="tw summary :week :ids"
 
@@ -340,7 +338,10 @@ dcstop() {
   docker ps -q | xargs -r -n1 docker stop
 }
 
-if [ -f ~/.private-alias ]
-then
-  source ~/.private-alias
+if [ -e "$HOME/.arch.aliases" ] ; then
+  source "$HOME/.arch.aliases"
+fi
+
+if [ -e "$HOME/.private.aliases" ] ; then
+  source "$HOME/.private.aliases"
 fi

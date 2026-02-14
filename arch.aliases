@@ -1,0 +1,3 @@
+alias pac.clear="yay -Qqtd | yay -Rns -"
+alias pac.update="yay -Syu"
+alias pac.install="yay -S"
