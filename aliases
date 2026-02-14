@@ -121,15 +121,15 @@ function p() {
       echo "p --list (list all projects)"
       ;;
     "--list")
-      for f in `ls -1 $sites_directory`; do
+      for f in `command ls -1 $sites_directory`; do
         echo "Projects in $f:"
-        for fin in `ls -1l $sites_directory/$f | grep "^d" | awk '{print $7}'`; do
+        for fin in `command ls -1l $sites_directory/$f | grep "^d" | awk '{print $7}'`; do
           echo "  $fin"
         done
       done
       ;;
       *)
-        for f in `ls -1 $sites_directory/`; do
+        for f in `command ls -1 $sites_directory/`; do
           if [ -d $sites_directory/$f/$1 ]; then
             echo "Project found in $f"
             cd $sites_directory/$f/$1
