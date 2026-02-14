@@ -345,3 +345,7 @@ fi
 if [ -e "$HOME/.private.aliases" ] ; then
   source "$HOME/.private.aliases"
 fi
+
+if [ -e "$HOME/.work.aliases" ] ; then
+  source "$HOME/.work.aliases"
+fi
